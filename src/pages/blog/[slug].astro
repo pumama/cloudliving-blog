@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Subscribe from "../../components/Subscribe.astro";
 import AuthorSidebar from "../../components/AuthorSidebar.astro";
+import Comments from "../../components/Comments.astro";
 import { getAllPosts, getPostBySlug, slugify } from "../../lib/posts";
 import { markdownToHtml } from "../../lib/markdown";
 
@@ -51,6 +52,8 @@ const catSlug = slugify(post.category);
         <hr class="my-10 border-gray-100" />
 
         <Subscribe compact />
+
+        <Comments slug={post.slug} />
       </article>
 
       <!-- Sidebar — hidden on mobile -->

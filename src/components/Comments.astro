@@ -1,0 +1,37 @@
+---
+interface Props {
+  slug: string;
+}
+
+const { slug } = Astro.props;
+---
+
+<section class="mt-10" id="comments">
+  <h3 class="text-lg font-semibold text-gray-900 mb-4">Comments</h3>
+  <div class="giscus"></div>
+</section>
+
+<script define:vars={{ slug }}>
+  function loadGiscus() {
+    const script = document.createElement("script");
+    script.src = "https://giscus.app/client.js";
+    script.setAttribute("data-repo", "pumama/cloudliving-blog");
+    script.setAttribute("data-repo-id", "R_kgDOR3eRgA");
+    script.setAttribute("data-mapping", "specific");
+    script.setAttribute("data-term", slug);
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "top");
+    script.setAttribute("data-theme", "light");
+    script.setAttribute("data-lang", "en");
+    script.setAttribute("data-loading", "lazy");
+    script.crossOrigin = "anonymous";
+    script.async = true;
+    document.querySelector(".giscus")?.appendChild(script);
+  }
+
+  // Handle View Transitions - reload giscus on page swap
+  loadGiscus();
+  document.addEventListener("astro:after-swap", loadGiscus);
+</script>
