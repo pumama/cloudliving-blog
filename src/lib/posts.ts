@@ -94,6 +94,7 @@ export function getAllCategories(): CategoryInfo[] {
     "Making Money Online",
     "WordPress",
     "Tools & Reviews",
+    "Vibe Code",
   ];
   return Array.from(map.entries())
     .map(([name, count]) => ({ name, count }))
