@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Schema } from "astro-seo-schema";
 import Subscribe from "../components/Subscribe.astro";
 import AuthorSidebar from "../components/AuthorSidebar.astro";
 import Comments from "../components/Comments.astro";
@@ -26,25 +27,53 @@ const dateStr = new Date(post.date).toLocaleDateString("en-US", {
 const catSlug = slugify(post.category);
 ---
 
-<Layout title={post.seoTitle || post.title} description={post.description}>
-  <div class="mx-auto max-w-5xl px-6 py-16">
+<Layout title={post.seoTitle || post.title} description={post.description} article publishedTime={post.date}>
+  <Schema
+    item={{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: post.seoTitle || post.title,
+      description: post.description,
+      datePublished: post.date,
+      url: `https://www.cloudliving.com/${post.slug}/`,
+      author: {
+        "@type": "Person",
+        name: "Tung Tran",
+        url: "https://www.cloudliving.com/about",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Cloud Living",
+        url: "https://www.cloudliving.com",
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `https://www.cloudliving.com/${post.slug}/`,
+      },
+      articleSection: post.category,
+      wordCount: post.content.split(/\s+/).length,
+    }}
+    slot="head"
+  />
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 py-10 sm:py-16">
     <div class="lg:flex lg:gap-12">
       <!-- Main content -->
       <article class="flex-1 min-w-0">
         <header class="mb-10">
+          <p class="text-sm text-gray-400 mb-3">
+            <a href={`/blog/category/${catSlug}`} class="text-brand hover:text-brand-hover transition-colors">{post.category}</a>
+            {post.tags.map((tag) => (
+              <>{" / "}<a href={`/blog/category/${catSlug}/${slugify(tag)}`} class="hover:text-brand transition-colors">{tag}</a></>
+            ))}
+          </p>
           <h1 class="text-3xl font-bold text-gray-900 leading-tight">
             {post.title}
           </h1>
-          <div class="mt-3 flex items-center gap-3 text-sm text-gray-400">
+          <p class="mt-3 text-sm text-gray-400">
             <time datetime={post.date}>{dateStr}</time>
-            <span>&middot;</span>
-            <a href={`/blog/category/${catSlug}`} class="hover:text-brand transition-colors">{post.category}</a>
-            {post.tags.map((tag) => (
-              <a href={`/blog/category/${catSlug}/${slugify(tag)}`} class="hover:text-brand transition-colors">{tag}</a>
-            ))}
-            <span>&middot;</span>
-            <span>{post.readingTime}</span>
-          </div>
+            {" · "}
+            {post.readingTime}
+          </p>
         </header>
 
         <div class="prose" set:html={html} />

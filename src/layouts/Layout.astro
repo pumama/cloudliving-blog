@@ -1,4 +1,6 @@
 ---
+import { SEO } from "astro-seo";
+import { Schema } from "astro-seo-schema";
 import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 import Header from "../components/Header.astro";
@@ -7,14 +9,19 @@ import Footer from "../components/Footer.astro";
 interface Props {
   title?: string;
   description?: string;
+  article?: boolean;
+  publishedTime?: string;
 }
 
 const {
   title = "Cloud Living — Tung Tran",
   description = "Personal blog by Tung Tran. Lessons from building internet businesses, investing, and living life on my own terms.",
+  article = false,
+  publishedTime,
 } = Astro.props;
 
 const pageTitle = title === "Cloud Living — Tung Tran" ? title : `${title} — Cloud Living`;
+const canonicalUrl = new URL(Astro.url.pathname, "https://www.cloudliving.com").href;
 ---
 
 <!doctype html>
@@ -22,15 +29,58 @@ const pageTitle = title === "Cloud Living — Tung Tran" ? title : `${title} —
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content={description} />
-    <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
-    <meta property="og:site_name" content="Cloud Living" />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <SEO
+      title={pageTitle}
+      description={description}
+      canonical={canonicalUrl}
+      openGraph={{
+        basic: {
+          title: pageTitle,
+          type: article ? "article" : "website",
+          url: canonicalUrl,
+          image: "https://www.cloudliving.com/images/tung.jpg",
+        },
+        optional: {
+          description: description,
+          siteName: "Cloud Living",
+          locale: "en_US",
+        },
+        article: article ? {
+          publishedTime: publishedTime,
+          authors: ["Tung Tran"],
+        } : undefined,
+      }}
+      twitter={{
+        card: "summary",
+        site: "@OfficialTung",
+        creator: "@OfficialTung",
+      }}
+    />
+    <Schema
+      item={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "Cloud Living",
+        url: "https://www.cloudliving.com",
+        description: "Personal blog by Tung Tran. Lessons from building internet businesses, investing, and living life on my own terms.",
+        author: {
+          "@type": "Person",
+          name: "Tung Tran",
+          url: "https://www.cloudliving.com/about",
+          image: "https://www.cloudliving.com/images/tung.jpg",
+          sameAs: [
+            "https://x.com/OfficialTung",
+            "https://github.com/pumama",
+            "https://t.me/tungtrantk",
+          ],
+          jobTitle: "Internet Entrepreneur",
+          description: "Vietnamese internet business builder. Building and investing in online businesses since 2010.",
+        },
+      }}
+    />
+    <slot name="head" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="alternate" type="application/rss+xml" title="Cloud Living" href="/feed.xml" />
-    <title>{pageTitle}</title>
     <ClientRouter />
   </head>
   <body class="min-h-full flex flex-col">

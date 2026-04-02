@@ -9,7 +9,7 @@ const recentPosts = posts.slice(0, 5);
 ---
 
 <Layout>
-  <div class="mx-auto max-w-3xl px-6 py-16">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-16">
     <section class="mb-16 flex items-center gap-10">
       <div class="flex-1">
         <h1 class="text-3xl font-bold text-gray-900">Hi, I'm Tung</h1>
@@ -62,11 +62,11 @@ const recentPosts = posts.slice(0, 5);
           <h3 class="font-semibold text-gray-900">TK Ventures</h3>
           <p class="mt-1 text-sm text-gray-500">A leading crypto media company based in SE Asia. 50+ remote team.</p>
         </a>
-        <a href="/blog/category/vibe-code" class="group rounded-xl bg-white border border-gray-100 p-5 border-l-4 border-l-brand shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200">
+        <div class="rounded-xl bg-white border border-gray-100 p-5 border-l-4 border-l-brand shadow-sm">
           <p class="text-xs font-medium uppercase tracking-wide text-brand mb-2">Code</p>
           <h3 class="font-semibold text-gray-900">Vibe Code</h3>
           <p class="mt-1 text-sm text-gray-500">Using AI to code, write, and automate. Building tools and workflows for the next chapter.</p>
-        </a>
+        </div>
       </div>
     </section>
 
@@ -90,5 +90,6 @@ const recentPosts = posts.slice(0, 5);
         <p class="text-gray-400 text-sm py-8">No posts yet.</p>
       )}
     </section>
+
   </div>
 </Layout>
