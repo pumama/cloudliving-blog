@@ -1,0 +1,462 @@
+---
+title: "WordPress Security: The Ultimate Guide to Secure Your Website in 2018"
+date: "2018-05-17"
+slug: "wordpress-security"
+category: "WordPress"
+tags: ["Guide"]
+description: "Learn the actual reasons why most WordPress sites get hacked based on real data and the 5 biggest security steps you MUST take, as well as..."
+---
+
+![](/images/blog/wordpress-security/sucuri-data.png)
+
+# WordPress Security: The Ultimate Guide to Secure Your Website in 2018
+
+-     [Tung Tran](https://www.cloudliving.com/author/tung-tran/ "View all posts by Tung Tran")
+-   Last Updated August 17, 2018
+
+This actionable guide will teach you everything you need to know to keep your WordPress site safe and secure.  
+  
+First, you'll learn the actual reasons why most WordPress sites get hacked based on real data.  
+  
+Then, I'll share the 5 biggest security steps you MUST take, as well as 8 other smaller security tweaks you can employ to put your security over the top.  
+  
+By the end, your WordPress site will be more secure than a bank vault.
+
+
+## Is WordPress Secure?
+
+**Yes**. The core WordPress software - the software [that powers](https://w3techs.com/technologies/details/cm-wordpress/all/all) over **30% of all the websites on the Internet** \- is secure.
+
+If you installed a fresh copy of the core WordPress software at a secure host, kept it updated, and used secure account credentials, it's unlikely that your site would ever experience issues.
+
+While there are occasional vulnerabilities that get discovered, the [WordPress Security Team](https://wordpress.org/about/security/#ref3) usually gets them patched right away.
+
+**Here's what's not guaranteed to be secure, though:**
+
+> Extensions and human behavior.
+
+Yup - as I'll show you in a second, your WordPress site is _most likely_ to get hacked as a result of the extensions that you install or the human errors that you make (_the goal of this post is that you don't make those errors_).
+
+## How WordPress Sites Get Hacked: Based On Data
+
+Because WordPress is so popular, we don't have to guess how WordPress sites get hacked. Companies like Sucuri and Wordfence have done awesome research on this exact subject.
+
+Let's start with the core software. Of the hacked WordPress sites [that Sucuri looked at](https://blog.sucuri.net/2017/01/hacked-website-report-2016q3.html), **61% of them were running out-of-date software when they got infected**:
+
+
+A second ago I told you that WordPress was secure...**but that's only if you keep it updated**.
+
+For example, in February 2017 [there was REST API vulnerability](https://wptavern.com/wordpress-rest-api-vulnerability-is-being-actively-exploited-hundreds-of-thousands-of-sites-defaced) in the WordPress core that led to hundreds of thousands of sites getting defaced. **But weeks before the vulnerability started being actively exploited, the core team had already released an update that fixed it**.
+
+All these sites were defaced _simply because they didn't update_.
+
+Let's go a little deeper, though. There are other reasons that your site might get hacked.
+
+Wordfence [surveyed 1,032 hacked](https://www.wordfence.com/blog/2016/03/attackers-gain-access-wordpress-sites/) site owners and, _of the owners who knew how their site got hacked (which wasn't the majority),_ here are the reasons:
+
+-   ~60% got hacked because of their plugins or theme
+    
+-   ~20% got hacked because of login details (brute force, password theft, phishing, etc.)
+    
+-   The rest got hacked by a variety of smaller issues
+    
+
+
+All of that data adds up to three of my five big rules for WordPress security:
+
+-   Most hacked sites aren't running the latest WordPress version
+    
+-   Poor quality plugins or themes are a big attack vector
+    
+-   Not properly securing your login is another big security hole
+    
+
+And those rules lead me to my next point...
+
+## WordPress Security Is A Philosophy, Not A Plugin
+
+While there are some great security plugins that I'll discuss, there's no 100% "set it and forget" solution for making your WordPress site secure.
+
+No, I don't mean that you need to sit there and slave away every day manually running malware scans on your site.
+
+**I just mean that security is a philosophy that you need to adopt**. Security is saying, "hey, maybe I should read this plugin's reviews before I install it and see if it has any known vulnerabilities". Or, "hey, there's a new WordPress security update out today. Let me go apply it right now on all my sites."
+
+## The 5 Biggest Things You Can Do Right Now To Secure Your WordPress Site
+
+There are all kinds of smaller tweaks that you can make to harden your site that I'll discuss in the next section. They're all worthwhile, but I know that not everyone has time to go through ~20 different security items and make every single tweak.
+
+So if you _only_ do five things, I think these are what you should do _at a minimum_.
+
+### 1\. A.B.U. (Always Be Updating)
+
+Updates are one of those things that most people know are important...but most people also quickly forget about.
+
+**Don't be like most people**.
+
+WordPress has put in so many features to make updates easy. In fact, nowadays all you need to do is click a button and WordPress does everything for you.
+
+If you're not sure how it works, you just look for the red icons (_this is a test localhost site - that's why I have so many update notifications!_):
+
+
+Then, you can go to **Dashboard → Updates** and run all your updates at once:
+
+
+**A FEW NOTES ON UPDATES:**
+
+-   If you hold off on updates because you're worried they might break your site...**stop doing that**. Instead, pick a host with a staging site feature so that you can quickly test on your staging site and then push the update live once you know it won't break anything.
+    
+-   If you can't check your WordPress dashboard that often, you can use the [WP Updates Notifier plugin](https://wordpress.org/plugins/wp-updates-notifier/) to get email notifications when there's a new plugin or theme update.
+    
+
+-   You _can_ use the [Easy Updates Manager](https://wordpress.org/plugins/stops-core-theme-and-plugin-updates/) to automatically apply updates as they become available. _I don't personally recommend doing this because it can be dangerous if there are any compatibility issues with an update and you're not around to catch them, but some people do like this method._
+    
+
+### 2\. Follow Good Plugin And Theme Best Practices
+
+The great thing about _using_ WordPress is how easy it is to extend your site with themes and plugins.
+
+The bad thing about WordPress _security_ is how easy it is to extend your site with themes and plugins.
+
+That is, because it's become so easy to install new themes and plugins, most people do it without thinking.
+
+But as I showed you above, plugin and theme vulnerabilities are a huge attack vector.
+
+I'm not trying to stop you from installing new extensions, you just need to be discerning about which extensions you actually install:
+
+-   **Use trusted sources.** While this won't solve _all_ problems, if you stick to extensions at WordPress.org or trusted third-party developers/marketplaces, you're going to eliminate _most_ issues.
+    
+-   **Don't use nulled plugins.** Yeah, I know you're on a budget...but it's not worth it to install the nulled plugin that might have malicious code added. Just find a free alternative if you can't afford it.
+    
+-   **Check for known vulnerabilities**. [WPVulnDB](https://wpvulndb.com/) does a good job of collecting these. _Note that most of these vulnerabilities get fixed - so check whether or not the developer has addressed it before you write the plugin off_.
+    
+-   **Read the reviews**. Reviews are a great spot to see if any existing users have experienced any security issues.
+    
+-   **Read the support forums, too.** Support forums can also help you spot issues. Better yet, they also let you see how responsive the developer is to issues, which is another helpful piece of information.
+    
+-   **Delete unused plugins/themes.** Even if you disable a plugin or theme, its code is still sitting on your server, which means it can be exploited.
+    
+
+
+### 3\. Pick Secure WordPress Hosting
+
+The _right_ WordPress host can go a long way towards ensuring the security of your site.
+
+**There are two parts to this:**
+
+First, **if you're on shared hosting**, you want a host that isolates your sites from other sites on that server. This ensures that your site doesn't get cross-contaminated just because _someone else's_ site on your shared server got hacked.
+
+You can get isolation even on cheap hosting, so this isn't something that's unique to premium hosts.
+
+To figure out if your host offers isolation, you can:
+
+-   Ask the pre-sales support staff
+    
+
+-   Look at the feature list (_many hosts that offer isolation are proud to say it_)
+    
+
+
+The other way that hosting can protect you is via proactive measures.
+
+**A quality managed WordPress host will:**
+
+-   Properly configure your server to prevent many types of exploits
+    
+-   Set up WordPress-specific firewalls at the server level
+    
+-   Run malware scans and ensure file integrity
+    
+
+
+[Kinsta's Security page](https://kinsta.com/secure-wordpress-hosting/) has a good explanation of the various ways in which a host can protect you from issues.
+
+While you can get some of these same features via WordPress plugins, having your host implement them at the server level is a better approach for both performance and security.
+
+### 4\. Secure Your Login Page And User Credentials
+
+In that Wordfence survey of hacked website owners, 20% of the sites got hacked simply because the hacker somehow got ahold of a valid username and password combo.
+
+That's dangerous because getting access to a WordPress Administrator account basically gives someone complete control over your site.
+
+To stop that from happening, you have a bunch of tools and tricks at your disposal:
+
+#### Use Strong Passwords (Required)
+
+Did you know that the [most popular password](http://fortune.com/2017/12/19/the-25-most-used-hackable-passwords-2017-star-wars-freedom/) is "123456"? If that's you...well, hopefully you change your ways after reading this post.
+
+Simple passwords are easy to guess via a brute force attack, which accounted for ~15% of the hacked sites in Wordfence's survey.
+
+The solution is pretty simple - **always use a strong password**.
+
+To do that, you can just use WordPress' password generator:
+
+
+Then, because that password is impossible to actually remember (_that's kind of the point!_), you can use a tool like [LastPass](https://www.lastpass.com/) to securely store all the passwords for your different sites (_LastPass also includes a great password generator, itself_).
+
+If you have other users at your site, you can use the free [Force Strong Passwords plugin](https://wordpress.org/plugins/force-strong-passwords/) to make sure they have strong passwords, too.
+
+#### Don't Use Admin As Your Username (Required)
+
+Since WordPress has [stopped forcing](https://core.trac.wordpress.org/ticket/24078) **admin** as the default username, this one is less of an issue.
+
+But plenty of users still choose to use **admin** as their username, despite the fact that it makes them vulnerable to brute force attacks (_if you use "admin" and "123456" at the same time, you should probably run a malware scan on your site right away!_).
+
+This one is easy to fix - just pick a unique username when you create a site.
+
+If you're already using **admin** as your username on an existing site, you can:
+
+-   Use the [Username Changer](https://wordpress.org/plugins/username-changer/) plugin to change your username
+    
+
+-   Manually create a new **Administrator** account and then delete the admin username
+    
+
+#### Use HTTPS On Your Site (Required)
+
+Moving WordPress to HTTPS has all kinds of other benefits - but one great thing that it does is secure your login page.
+
+Without HTTPS, your login credentials aren't encrypted (_which means that a malicious actor can steal them if you're, say, working over public WIFI_). With HTTPS, though, those credentials are always encrypted.
+
+Check out our [detailed guide to moving WordPress to HTTPS](https://www.cloudliving.com/wordpress-ssl/) for more details on the process.
+
+#### Limit Login Attempts (Should Do)
+
+[Brute force attacks](https://en.wikipedia.org/wiki/Brute-force_attack) work by repeatedly guessing different combinations of usernames and passwords.
+
+Using a strong username/password combo makes that much harder. But to make things _even more difficult_, you can limit the number of login attempts at your site with the [Loginizer plugin](https://wordpress.org/plugins/loginizer/).
+
+
+With the plugin, anyone who enters incorrect login details too many times will be locked out for a period of time (_that you can customize_).
+
+#### Move Your Login Page (Good Idea)
+
+I don't really think this makes your site any more secure _if you're following the above tips_. But it is still a good idea because it can greatly reduce the botnet traffic to your site, which lessens the load on your site's server.
+
+So..._not as big a security necessity as some people make it out to be_, but still a good idea for other reasons. It's also super easy to do with the [WPS Hide Login plugin](https://wordpress.org/plugins/wps-hide-login/) (_many security plugins can do this as well_).
+
+#### 2-Factor Authentication (Not Necessary For All Sites)
+
+I don't think this one is a necessity for most sites. But if you're really concerned about people getting unauthorized access to your site, 2-factor authentication kicks things up a notch by requiring users to enter a one-time code in addition to their password (_lots of banks use this technology_).
+
+They can get this code via email, SMS, or a smartphone app.
+
+The [Google Authenticator plugin](https://wordpress.org/plugins/google-authenticator/) makes this pretty easy and uses the free Google Authenticator app. The [miniOrange plugin](https://wordpress.org/plugins/miniorange-2-factor-authentication/) is a more flexible option, though the free version is limited.  
+
+### 5\. Back Up Your Site Regularly
+
+Backups are the ultimate security blanket.
+
+They ensure that, in the event that something does go wrong, you're never dead in the water.
+
+If your host doesn't already offer automatic backups, then I recommend:
+
+-   [UpdraftPlus](https://wordpress.org/plugins/updraftplus/) for a free solution that lets you schedule automatic backups
+    
+-   [VaultPress](https://vaultpress.com/) for a premium solution (_that includes malware scans_)
+    
+
+I know that this section is pretty short in comparison to the others. But that's because it's simple:
+
+**Keep a working backup of your site and any security issues will be a lot less catastrophic.**
+
+### 6\. Bonus: Consider A Security Plugin
+
+I know that I said five things...but I'm chucking this one in as a bonus.
+
+Let me be honest - I don't use a security plugin on my own sites. A big part of the reason is that my host has implemented many of the most important security tweaks at the server level.
+
+**But security plugins definitely exist for a reason** - they can perform a good number of the hardening tips that I've discussed above (_and the tips that I will discuss in the next section_). _Especially if your host isn't already doing these things for you._
+
+So here's the deal:
+
+Security plugins can definitely be helpful. But they're not an absolute necessity if you follow all the other best practices and choose a proactive host. Nor are they a cure-all - you still need to keep the security philosophy I outlined above in mind if you want to keep your site secure.
+
+If you want to try a security plugin on your site, two good options are:
+
+-   [Wordfence](https://wordpress.org/plugins/wordfence/)
+    
+-   [Sucuri](https://wordpress.org/plugins/sucuri-scanner/)
+    
+
+## Other Smaller WordPress Security Tips To Harden Your Site
+
+These tips may not have as broad implications, but they're still a great way to harden your site's security.
+
+### 7\. Follow The Principle Of Least Privilege
+
+If you're giving other people access to your site, you should understand [the principle of least privilege](https://kb.iu.edu/d/amsv).
+
+It essentially says, "only give someone as much access/power as they need to do their job".
+
+With WordPress, this means smartly using [user roles](https://codex.wordpress.org/Roles_and_Capabilities).
+
+For example, if you hire a new content writer, make sure you only give them the **Author** user role. They definitely don't need the ability to install plugins, nor do they need the ability to edit Pages (_the latter is something the Editor role allows_).
+
+Similarly, you should pretty much **never** give someone else an account with **Administrator** privileges unless you 100% trust them and they truly need that much power.
+
+### 8\. Consider Using Cloudflare
+
+While Cloudflare is a great tool to [speed up your WordPress site](https://www.cloudliving.com/speed-up-wordpress/), it's also a stellar security tool because it works as a reverse proxy.
+
+Basically, Cloudflare has the ability to filter traffic _before_ it hits your site, which can keep you safe.
+
+If you're using Cloudflare, you can change your sitewide **Security Level** in the **Firewall** tab:
+
+
+But you can also set up content-specific rules using the **Page Rules** tab. This lets you do stuff like only apply a higher security level to just your **wp-login** and **wp-admin** pages.
+
+Check out this post for [more on those page rules](https://www.cloudflare.com/features-page-rules/optimize-wordpress/).  
+**​**  
+
+**Another great thing about Cloudflare is that it can help you defend against a DDoS attack.** While a [DDoS attack](https://en.wikipedia.org/wiki/Denial-of-service_attack) isn't actually "hacking" your site, it's still debilitating and hard to stop without help from a service like Cloudflare.**​**
+
+### 9\. Disallow File Editing
+
+By default, users with the **Administrator** role can edit plugin and theme code directly from the WordPress dashboard:
+
+
+This means that an unauthorized user who gets your account credentials _(which should be a lot more difficult now!_) can inject their own code into your site.
+
+If you don't use this feature anyway, I recommend disabling it to prevent that from happening.
+
+To do that, you just need to add this code snippet to your site's **wp-config.php** file:
+
+\## Disable Editing in Dashboard
+
+define('DISALLOW\_FILE\_EDIT', true);
+
+Speaking of wp-config.php...
+
+### 10\. Restrict Access To wp-config.php File
+
+Some people tell you to move your wp-config.php file. But after reading [this lengthy Stack Exchange thread](https://wordpress.stackexchange.com/questions/58391/is-moving-wp-config-outside-the-web-root-really-beneficial), I think the situation isn't quite as simple as many make it out to be...
+
+In the end, it seems like there are some benefits that apply to rare situations where your server is misconfigured. But the common way people tell you to move it (_just move it one directory up_) can actually open up new vulnerabilities.
+
+You can read that thread and decide for yourself. But my personal recommendation is to follow [the official WordPress Codex](https://codex.wordpress.org/Hardening_WordPress#WP-Config.php), which just recommends restricting access to it by adding this code snippet to your **.htaccess** file:
+
+<files wp-config.php>
+
+order allow,deny
+
+deny from all
+
+</files>
+
+_This_ [_video explains_](https://www.youtube.com/watch?v=4nTbUxi4V6Y) _how to add code to your .htaccess file_.
+
+### 11\. Block Execution In Uploads Folder
+
+By default, WordPress stores all the files that you upload to your media library in the **uploads** folder.
+
+Because this folder is generally just a repository for static files, there's no need to allow PHP execution in this folder.
+
+To disable PHP editing in this folder:
+
+-   [Create a **new** .htaccess file](https://www.youtube.com/watch?v=0SOw2HhMpCo) in the root of **.../wp-content/uploads**
+    
+-   Add the below code snippet to the file
+    
+
+\# Kill PHP Execution
+
+<Files ~ "\\.ph(?:p\[345\]?|t|tml)$">
+
+  deny from all
+
+</Files>
+
+**NOTE:**
+
+**​**This might break _some themes_ that do require PHP execution in the uploads folder. If that happens - no worries. Just go back and remove the code snippet that you just added and your site should start working fine.
+
+### 12\. Block Directory Browsing
+
+Directory browsing allows someone to view the contents of a folder on your server _when there's no index file present_. That's not good from a security perspective.
+
+If you're at a quality host, directory browsing should already be disabled by default. For example, SiteGround (my host) [automatically blocks directory browsing](https://www.siteground.com/kb/how_to_prevent_directory_listing/) from day one.
+
+To see if directory browsing is enabled on your server, try going to **yoursite.com/wp-content/uploads.**
+
+Here's roughly what it _should_ look like (_the exact error might be a bit different_):
+
+
+But if you can see the contents of your uploads folder, you need to disable directory browsing by [adding this short line to your .htaccess file](https://www.youtube.com/watch?v=4nTbUxi4V6Y):
+
+\# Disable Directory Browsing
+
+Options -Indexes
+
+### 13\. Disable XML-RPC
+
+XML-RPC is a feature that lets you:
+
+-   Connect to your site via your smartphone
+    
+-   Use the pingback and trackback features
+    
+-   Use Jetpack
+    
+
+But it's also something that hackers can use to:
+
+-   Run brute force attacks
+    
+-   Launch a DDoS attack
+    
+-   Spam your site with pingbacks and trackbacks
+    
+
+If you're a fan of the former features, it's not necessarily a _bad_ thing to leave XML-RPC enabled. WordPress has gotten better about protecting XML-RPC, which is why the core team [removed the option to disable XML-RPC from the interface](https://core.trac.wordpress.org/ticket/21509) and [why Wordfence decided to no longer disable it in their plugin](https://www.wordfence.com/blog/2015/10/should-you-disable-xml-rpc-on-wordpress/)
+
+But _if you aren't using any of the features_, disabling it is still a good way to harden your site a little further.
+
+To disable any requests to XML-RPC on your site, you can [add this code to your .htaccess file](https://www.youtube.com/watch?v=4nTbUxi4V6Y):
+
+\# Blocks requests to xmlrpc
+
+<Files xmlrpc.php>
+
+order deny,allow
+
+deny from all
+
+</Files>
+
+Alternatively, you can use the [free Disable XML-RPC plugin](https://wordpress.org/plugins/disable-xml-rpc/).
+
+### 14\. Set Proper File Directory Permissions
+
+File permissions control what various entities can do with the files on your server. If you make them too permissive, they're a security risk. But if you make them too restrictive, your site won't be able to function properly.
+
+You can edit file permissions by using your FTP program of choice:
+
+
+The permissions for WordPress should be:
+
+-   Folders - 755
+    
+-   Files - 644
+    
+
+At most hosts, these should be the default permissions and **you don't need to do anything manually.**
+
+So while you can make sure that things are set up right, **I think the really important takeaway is this:**
+
+If you ever need to manually create a folder or file via FTP, **never give it 777 permissions**. Stick with the permissions outlined above.
+
+## Enjoy A More Secure WordPress Site
+
+If you made it this far - congrats! I know I hit you with a ton of different settings and tweaks.
+
+The good thing is that most of these WordPress security tips are one-time things.
+
+Implement the many hardening principles that I discussed. Then, maintain your security philosophy when it comes to performing timely updates, taking regular backups, and choosing only quality plugins and themes.
+
+If you do that, your WordPress site should stay safe and secure. And that means you can focus on making more money instead of freaking out about a malware warning from Google!
+
+[](https://www.cloudliving.com/author/tung-tran/)
+
+### [Tung Tran](https://www.cloudliving.com/author/tung-tran/)
+
+I’ve built and sold a bunch of highly profitable internet businesses since 2010. After selling my last one in November 2020, I decided to go all... [\[Read full bio\]](https://www.cloudliving.com/author/tung-tran/)

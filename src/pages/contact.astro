@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact" description="Get in touch with Tung Tran.">
+  <div class="mx-auto max-w-3xl px-6 py-16">
+    <h1 class="text-2xl font-bold text-gray-900 mb-2">Get in Touch</h1>
+    <p class="text-gray-500 mb-8">
+      Have a question, idea, or just want to say hi? Drop me a message below.
+    </p>
+
+    <form class="space-y-5" id="contact-form">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label for="name" class="block text-xs font-medium text-gray-500 mb-1">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Your name"
+            class="w-full rounded-lg border border-gray-200 bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-xs font-medium text-gray-500 mb-1">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="your@email.com"
+            class="w-full rounded-lg border border-gray-200 bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="subject" class="block text-xs font-medium text-gray-500 mb-1">Subject</label>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="What's this about?"
+          class="w-full rounded-lg border border-gray-200 bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+        />
+      </div>
+
+      <div>
+        <label for="message" class="block text-xs font-medium text-gray-500 mb-1">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows="6"
+          placeholder="Write your message..."
+          class="w-full rounded-lg border border-gray-200 bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent resize-y"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white hover:bg-brand-hover transition-colors"
+      >
+        Send Message
+      </button>
+    </form>
+
+    <div class="hidden mt-6 rounded-xl bg-sky-50 px-6 py-5" id="contact-success">
+      <p class="text-sm text-gray-900 font-medium">Message sent!</p>
+      <p class="text-sm text-gray-500 mt-1">Thanks for reaching out. I'll get back to you soon.</p>
+    </div>
+
+    <div class="mt-10 border-t border-gray-100 pt-8">
+      <p class="text-sm text-gray-500">
+        You can also find me on
+        <a href="https://x.com/OfficialTung" target="_blank" rel="noopener noreferrer" class="text-brand hover:text-brand-hover">X (Twitter)</a>.
+      </p>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const success = document.getElementById("contact-success")!;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    // TODO: Wire up to email service (Formspree, Resend, etc.)
+    form.classList.add("hidden");
+    success.classList.remove("hidden");
+  });
+</script>

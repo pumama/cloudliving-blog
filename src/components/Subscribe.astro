@@ -1,0 +1,45 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<div class="rounded-xl bg-sky-50 px-6 py-8" id="subscribe-box">
+  <h3 class:list={["font-semibold text-gray-900", compact ? "text-base" : "text-lg"]}>
+    Stay in the loop
+  </h3>
+  <p class="mt-1 text-sm text-gray-500">
+    I write about business, life lessons, and building things on the internet.
+    No spam. Unsubscribe anytime.
+  </p>
+  <form class="mt-4 flex gap-2" id="subscribe-form">
+    <input
+      type="email"
+      placeholder="your@email.com"
+      autocomplete="email"
+      required
+      class="flex-1 rounded-lg border border-gray-200 bg-white px-3.5 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+    />
+    <button
+      type="submit"
+      class="rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-hover transition-colors"
+    >
+      Subscribe
+    </button>
+  </form>
+  <p class="mt-2 text-sm text-gray-600 hidden" id="subscribe-success">
+    Thanks for subscribing! I'll keep you posted.
+  </p>
+</div>
+
+<script>
+  const form = document.getElementById("subscribe-form") as HTMLFormElement;
+  const success = document.getElementById("subscribe-success")!;
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    form.classList.add("hidden");
+    success.classList.remove("hidden");
+  });
+</script>

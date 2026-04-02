@@ -1,0 +1,479 @@
+---
+title: "Wordpress SSL: How to Switch From HTTP to HTTPS (13 Simple Steps)"
+date: "2018-03-08"
+slug: "wordpress-ssl"
+category: "WordPress"
+tags: ["Guide"]
+description: "Want to move your Wordpress site from HTTP to HTTPS? Read this indepth guide and follow our 13 simple steps to add SSL to your website without destroying your SEO & traffic in the process."
+---
+
+![](/images/blog/wordpress-ssl/browser-https-example.png)
+
+# WordPress SSL: How to Switch From HTTP to HTTPS (13 Simple Steps)
+
+-     1") [Tung Tran](https://www.cloudliving.com/author/tung-tran/ "View all posts by Tung Tran")
+-   Last Updated August 17, 2018
+
+This ultimate guide will give you everything you need to move your WordPress site **from HTTP to HTTPS.**
+
+First, I'll explain why having a SSL certificate installed on your website is a **MUST**.
+
+Then, I'll give you a **detailed, step-by-step guide** on how you can properly move your WordPress site to HTTPS _with as little impact on your SEO and marketing efforts as possible_.
+
+Sound good? Let’s dive right in…
+
+
+## What Are HTTPS And SSL/TLS?
+
+[HTTPS](https://en.wikipedia.org/wiki/HTTPS) is a secure method for transferring information on the Internet. With respect to your website, it does two important things:
+
+-   Encrypts the data that's sent between a web browser and your site's server.  
+      
+    
+-   Authenticates that a web browser is indeed connected to the right web server, rather than a malicious imposter (_known as a_ [_man in the middle attack_](https://en.wikipedia.org/wiki/Man-in-the-middle_attack)).
+
+You can tell if a website is using HTTPS by looking for **https://** rather than **http://** in your browser address bar. Additionally, most browsers now mark HTTPS with a green padlock:
+
+
+To get HTTPS on your website, you need to install something called an **SSL/TLS certificate**. _You'll often see people just call these "SSL certificates", but TLS is actually the_ [_more secure successor to SSL_](https://www.globalsign.com/en/blog/ssl-vs-tls-difference/) _that's used today._
+
+Thanks to the growing [push to adopt HTTPS on the web](https://www.eff.org/encrypt-the-web), you can now find free, easy-to-install SSL/TLS certificates for your site.
+
+This has caused a massive growth in the adoption of HTTPS:
+
+-   In Jan 2017, 50% of all web pages loaded by Firefox were using HTTPS  
+      
+    
+-   In Jan 2018, **70% of all web pages loaded by Firefox were using HTTPS**
+
+
+## Why You Should Join The Majority And Move Your WordPress Site To HTTPS
+
+The reasons behind this growth in adoption are a classic "carrot and stick" scenario.
+
+On the carrot side, you have all kinds of benefits in the form of improved security, a positive SEO ranking factor, better credibility with your visitors, and more.
+
+On the stick side, you have increasingly aggressive warnings to visitors of your website in Google Chrome (with other browsers following suit).
+
+## The Positive Benefits Of Moving Your Site To HTTPS
+
+Even if you didn't have a big 'ole stick swinging at your head from Google (_I'll talk about that in the next section_), I think these reasons alone should be all that you need to convince you.
+
+### HTTPS Makes Your Website More Secure
+
+This is the reason that so many big technology companies are pushing for HTTPS:
+
+Using HTTPS makes your site more secure for both you and your visitors.
+
+First off, if you ever log in to your WordPress site over public WIFI while using HTTP, **you're exposing your admin login credentials to anyone who's interested.** If you switch to HTTPS, those credentials are secure.
+
+**So on a selfish note - it's just a good practice to keep your site safe from malicious actors.**
+
+HTTPS does the same for your visitors. And, more importantly if you don't accept user registrations, HTTPS' authentication system also **prevents malicious actors from impersonating your website** in [a man in the middle attack](https://www.makeuseof.com/tag/man-middle-attack-security-jargon-explained/), which also helps keep your visitors safe.
+
+### HTTPS Is A Positive Ranking Factor In Google
+
+Ok, I don't want to overstate this one because it's not like moving your WordPress site to HTTPS is going to instantly shoot your site up to the first position.
+
+But [in 2014 Google publicly said](https://webmasters.googleblog.com/2014/08/https-as-ranking-signal.html) that they're using (and experimenting with) HTTPS as a ranking signal.
+
+Additionally, an [increasingly large percentage](https://moz.com/blog/half-page-one-google-results-https) of first-page Google results are using HTTPS (_though obviously a big part of this is just the overall increase in adoption of HTTPS_):
+
+
+  
+
+_Source:_ [_Moz_](https://moz.com/blog/half-page-one-google-results-https)
+
+### Other Smaller Benefits Of HTTPS
+
+Beyond the two biggies above, HTTPS can also help get you:
+
+-   **More accurate Google Analytics referral data** - Google Analytics doesn't show the referrer if a user comes from an HTTPS page to an HTTP page. By moving to HTTPS, you can see that referral data, though.
+    
+-   **Better credibility with your visitors** - even back in 2015, 28.9% of the people that GlobalSign surveyed looked for the green HTTPS address bar in their browsers. I'm sure that number has only grown.
+    
+-   **Improved performance via HTTP/2** - if your host supports HTTP/2, moving to HTTPS allows you to use this protocol, which performs better than the older HTTP/1.
+    
+
+## Browsers Are Going To Brand Your Site Not Secure If You Don't Get HTTPS
+
+If the above benefits weren't enough to convince you to move your WordPress site to HTTPS, maybe this fact will give you an extra boost:
+
+**Google, through Chrome, is on the warpath to get webmasters to adopt HTTPS.**
+
+While sites using HTTPS get that nice green padlock and **Secure** text, sites still using HTTP get the opposite.
+
+Google started out with some leniency, only marking input pages (like a login form) with a **Not Secure** warning starting in January 2017:
+
+
+**But** [**starting in July 2018**](https://security.googleblog.com/2018/02/a-secure-web-is-here-to-stay.html)**, Google is going to get a lot more aggressive:**
+
+That's when **all sites** still using HTTP will look like this:
+
+
+Yes - every single HTTP page will be marked as **Not secure**. That probably won't inspire a lot of confidence in your visitors, right?
+
+**That's why you need to start making plans to move your sites to HTTPS now**. Because you don't want to be the person with a big fat **Not Secure** warning over your entire website come July 2018.
+
+## Will Moving To HTTPS Hurt Your Website's SEO?
+
+This is the million dollar question.
+
+**Properly** moving to HTTPS _should not_ have any long-term negative effect on your site's rankings _(a big emphasis on that "properly" part - that's what his post is about)._
+
+I haven't personally experienced any negative effects from moving any of my sites. And John Mueller (from Google) had this to say [in his FAQ post](https://plus.google.com/+JohnMueller/posts/PY1xCWbeDVC):
+
+"Fluctuations can happen with any bigger site change. We can't make any guarantees, **but our systems are usually good with HTTP -> HTTPS moves."**
+
+**Google can be a fickle beast, though, so I'm not going to sit here and 100% promise you that your site won't move at all.**
+
+### Other Considerations For Moving Your Site To HTTPS
+
+Beyond SEO, another thing that kind of sucks about moving your site to HTTPS is that you're going to lose the social share counts for your old posts.
+
+There are some workarounds that I will discuss later on - but none of them work perfectly for all social share networks.
+
+If you display share counts on your site, this is kind of a rough deal. But I don't think the negative of losing share counts is big enough to counteract all the benefits above.
+
+## How To Move Your WordPress Site From HTTP To HTTPS
+
+To install a SSL certificate on your WordPress website, follow these 13 steps:
+
+1.  Install an SSL/TLS certificate on your server
+2.  Set up a 301 redirect for HTTP → HTTPS
+3.  Update all the internal links and media files on your site to use HTTPS
+4.  Check for mixed content warnings from third-party scripts/images
+5.  Update your CDN links **(****if using a CDN)**
+6.  Change Cloudflare to full SSL (**if using Cloudflare)**
+7.  Migrate your Disqus comments **(if using Disqus)**
+8.  Create new Google Search Console properties
+9.  Update your site's URL in Google Analytics
+10.  Update all the links on your social profiles
+11.  Try to get as many external sites to update their links as possible
+12.  Update the links in other places, like email marketing software
+13.  Try to recover some share counts (if possible)
+
+I know that seems like a ton - but it's not _that_ time-consuming and the benefits are worth it. Let's get started!
+
+## Part 1: Getting HTTPS Working On Your WordPress Site
+
+**Before you get started with this section, I highly recommend that you back up your site.** While you shouldn't experience any issues if you follow my guide to the letter, you will be editing essential parts of your site, so you definitely want a recent backup in hand.
+
+**Got your backup ready? Ok - continue.**
+
+### Step 1: Install An SSL/TLS Certificate At Your Host
+
+Unfortunately, this is the one step in this guide where I can't give you a specific tutorial because the process varies depending on where you're hosting your site.
+
+Nowadays, _most_ hosts give you the option of installing an SSL/TLS certificate for free thanks to a service called [Let's Encrypt](https://letsencrypt.org/).
+
+**Usually, this only involves clicking a few buttons in cPanel**. And some hosts will even handle some of the other technical steps for you.
+
+To see if your host offers a free Let's Encrypt certificate:
+
+-   Check out the [full list of hosts that support Let's Encrypt](https://community.letsencrypt.org/t/web-hosting-who-support-lets-encrypt/6920)
+    
+-   Consult your host's support docs
+    
+
+To help you out, I've collected the support docs for popular hosts:
+
+-   [SiteGround](https://www.siteground.com/tutorials/getting-started/install-a-certificate/)  
+    
+-   [InMotion Hosting](https://www.inmotionhosting.com/support/website/cpanel/auto-ssl-guide)
+-   [A2 Hosting](https://www.a2hosting.com/kb/security/ssl/securing-a-cpanel-enabled-account-with-a-lets-encrypt-ssl-certificate)
+-   [Bluehost](https://my.bluehost.com/hosting/help/free-ssl)  
+    
+
+**EDITOR'S NOTE**
+
+This is another reason why I love [**WPX Hosting**](https://www.cloudliving.com/recommends/wpx-hosting/ "WPX Hosting") so much:
+
+They've made it super easy to switch your site to HTTPS in just a few simple clicks. Watch the video below:
+
+
+**TUNG TRAN**
+
+Founder of CloudLiving.com
+
+#### How To Check If Your SSL/TLS Certificate Is Working
+
+Once you install your SSL/TLS certificate, you should be able to access your site at https://www.yoursite.com and see the green padlock (_you might also see a mixed content error instead of the green padlock. That's fine for now - we'll fix that in a second_).
+
+You can also use the [free SSL Checker tool from Symantec](https://cryptoreport.websecurity.symantec.com/checker/) to make sure it's working:
+
+
+### Step 2: Set Up A 301 Redirect For HTTP to HTTPS
+
+**​NOTE:**  
+
+The next two steps require editing your site's .htaccess file and database, which are sensitive areas. I don't think it's anything too complicated.
+
+But if you feel overwhelmed, you can also use the free [Really Simple SSL plugin](https://wordpress.org/plugins/really-simple-ssl/) to perform these steps for you - you'll just need to keep the plugin installed and activated even after moving to HTTPS.
+
+
+**COLIN NEWCOMER**
+
+Contributing Writer, CloudLiving.com
+
+When you first install your SSL/TLS certificate, you're essentially going to have two accessible versions of your site:
+
+-   One at the http:// URL
+    
+-   And one at the new https:// URL
+    
+
+To fix that, and get the SEO link juice flowing properly to the HTTPS version of your site, you need to set up a [301 redirect](https://moz.com/learn/seo/redirection).
+
+If you're using cPanel and Apache (_which most web hosts are_), here's the code that you need to add at the top of your .htaccess file:
+
+> RewriteEngine On  
+> RewriteCond %{HTTPS} off  
+> RewriteRule ^(.\*)$ https://%{HTTP\_HOST}%{REQUEST\_URI} \[L,R=301\]
+
+To edit your .htaccess file in cPanel:
+
+-   Click on the **File Manager** option in your cPanel dashboard
+    
+-   Select your website from the drop-down
+    
+
+-   Make sure the box for **Show Hidden Files (dotfiles)** is checked
+    
+
+Then:
+
+-   Right-click and download a copy of your existing .htaccess file as a backup (**this is important - make sure you have a backup of this file just in case**. If anything goes wrong, you can just upload the backup version)
+    
+-   Right-click and edit your .htaccess file
+    
+-   Add the code snippet above to the top of the file and save your changes
+    
+
+
+Once you save your .htaccess file, try to visit the **http:/**/ version of your site. If you did it right, you should be taken straight to the secure **https://** version of the same page on your site.
+
+### Step 3: Update All Internal Links And Media Files
+
+Now your site is running on HTTPS, but there's still one problem:
+
+All of your internal links, including all the images and other media that you've inserted in your content, are still using HTTP. That's going to trigger something called a **Mixed Content Error** and you won't get the green padlock.
+
+The mixed content error basically means that assets are being loaded over both HTTPS **and** HTTP. Because not everything is loading over HTTPS, your site still isn't 100% secure:  
+
+To fix this, you need to edit all of the internal URLs in your database to use https:// instead of http://.
+
+Don't worry - this is easier than it sounds. Rather than querying your database directly, you can use a simple, and free, plugin called [Better Search Replace](https://wordpress.org/plugins/better-search-replace/).
+
+Install and activate the plugin. Then:
+
+-   ****Make sure you have a backup of your database before doing anything.**** 
+
+-   If you ignored me and didn't back up earlier, [UpdraftPlus](https://wordpress.org/plugins/updraftplus/) lets you run a backup specifically on your database.
+-   **
+    
+    Go to **Tools → Better Search Replace**
+    
+    **
+-   Enter http://www.yourdomain.com in the **Search for** box (_make sure to replace with your actual domain name. And if you don't use www in your domain, leave that out)._  
+    
+-   Enter https://www.yourdomain.com in the **Replace with** box (_again, make sure to replace with your own domain and leave out the www part if you don't use www on your site)._  
+    
+-   Select all the tables in the **Select** tables area.  
+      
+    
+-   Leave the **Run as dry run?** box checked and click **Run Search/Replace.** This will start a test run.
+
+
+Better Search Replace will run a test replacement. You can see these results at the top.
+
+If you see something like **X cells were found that need to be updated,** that's good (_your number will be a lot higher than my test site's number_):
+
+
+Now:
+
+-   **
+    
+    **Uncheck** the box for **Run as dry run?**
+    
+    **
+-   Click **Run Search/Replace** to run the database replacement for real
+
+### Step 4: Check For External Mixed Content
+
+Now, everything on your own server should be using HTTPS. But you still might get the mixed content error because of external scripts that you're loading.
+
+For example, if you haven't updated your AdSense ad code in a long time, you might still be serving AdSense ads over HTTP. To fix that, you'd just need to [grab the newer AdSense code that uses HTTPS](https://support.google.com/adsense/answer/10528?hl=en).
+
+**EDITOR'S NOTE**
+
+There are some reported cases where Adsense revenue dropped up to 30% after switching to HTTPs.
+
+Personally, I have not used Adsense for a long time and I don't have much experience with this.
+
+It can also happen because those people messed something up during the process.
+
+So, if you're using Adsense, follow the steps in this guide and monitor your revenue closely for a few days to make sure everything is alright.
+
+Switching to HTTPs is an absolute MUST.  You can't avoid it otherwise your organic traffic and brand's credibility will suffer.
+
+
+**TUNG TRAN**
+
+Founder of CloudLiving.com
+
+To check for mixed content errors, you can use:
+
+-   [JitBit SSL Check tool](https://www.jitbit.com/sslcheck/) to crawl your entire site (well, up to 200 pages for free)
+    
+-   The [HTTPS Checker](https://httpschecker.net/) software to crawl up to 500 pages for free
+    
+
+-   [Why No Padlock?](https://www.whynopadlock.com/) tool to check a single page
+    
+
+To fix the issue for specific things that those tools find, you can:
+
+-   Try just changing http:// to https:// in the script's code. This often ends up working.
+    
+-   See if you can get a new embed code for that tool that uses HTTPS.
+    
+-   Remove the offending code snippet if it's not necessary to your site's functioning.
+    
+
+### Step 5: Update CDN (If You're Using A CDN)
+
+If you're using a CDN, you'll also need to get your CDN content loading over HTTPS. This process varies depending on the service, but here are guides for most of the popular ones:
+
+-   [Amazon CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html)
+    
+-   [Stackpath](https://support.stackpath.com/hc/en-us/articles/227605367-SSL-Options-Explained) (the company that purchased MaxCDN)
+    
+-   [KeyCDN](https://www.keycdn.com/support/use-letsencrypt-with-keycdn-to-enable-ssl-tls/)
+    
+
+### Step 6: Switch To Full SSL On Cloudflare (If You're Using Cloudflare)
+
+If you're using Cloudflare, make sure that you have **Full SSL** turned on. To do this, go to the **Crypto** tab in your Cloudflare dashboard and select **Full** from the drop-down:
+
+
+### Step 7: Migrate Disqus Comments (If Using Disqus)
+
+If you're using Disqus, you can use the Disqus Migration Tool to move your comments to HTTPS. Brian Jackson has a [great tutorial on how to do this properly](https://woorkup.com/migrate-disqus-comments-https/).
+
+## Part 2: Offsite Steps You Should Take To Keep Things Functioning Properly
+
+At this point, your site should be humming along perfectly with HTTPS. But there are still some offsite considerations to cover:
+
+### Step 8: Create New Properties In Google Search Console (And Other Search Engines)
+
+Google Search Console will treat the HTTPS version of your site as a separate entity:
+
+
+To fix that, go to Search Console and create two new properties for the www and non-www HTTPS versions of your site:
+
+To fix that, go to Search Console and create two new properties for the www and non-www HTTPS versions of your site:
+
+-   https://www.yoursite.com
+    
+-   https://yoursite.com
+    
+
+On these new properties, make sure to:
+
+-   Add your sitemap again
+    
+-   Resubmit your disavow file _if you're using one_ (**this one is super important**)
+    
+-   Add any other desired settings (like how you prefer Google to show your URL in search)
+    
+
+You can download your disavow file from the HTTP property and then simply upload it to the new HTTPS properties.
+
+If you're using other search engines' webmaster tools, you'll also want to do the same for those tools.
+
+### Step 9: Update Your Site's URL In Google Analytics
+
+To use the HTTPS version of your site in Google Analytics:
+
+-   Go to **Admin** in your Google Analytics dashboard
+    
+-   Choose **Property Settings**
+    
+
+-   Select **https://** from the **Default URL** drop-down
+    
+
+
+### Step 10: Update All The Links On Your Social Profiles
+
+Go through:
+
+-   Facebook
+    
+-   Twitter
+    
+-   Pinterest
+    
+-   Instagram
+    
+-   YouTube
+    
+-   Any other social networks that you use
+    
+
+And update all the profile links to use the new HTTPS version of your site.
+
+### Step 11: Try To Get As Many External Links Updated As Possible
+
+**​NOTE:**  
+
+​**Don't fixate too much on this. You already set up a 301 redirect, so all your existing links will still go to the right place and pass link juice.**
+
+This is just a "nice to have" thing if it's easy to swap out the links.
+
+
+**COLIN NEWCOMER**
+
+Contributing Writer, CloudLiving.com
+
+While you'll never be able to update all of your external links, if it's not too time-consuming, you should try to update any of the links you have control over.
+
+For example, if you already have a relationship with a webmaster, just shoot them an email and see if they'll do you a favor. Or, if you wrote a guest post, reach out to the editor again to see if they wouldn't mind inserting that extra "s" for you.
+
+### Step 12: Think Of Other Places With Links To Update
+
+There still might be some other spots with links that you can update. Possible culprits are:
+
+-   Email marketing software
+    
+-   Facebook ads (_might as well cut out that redirect hop_)
+    
+-   Any other tool you use that links to your site
+    
+
+### Step 13: Try To Recover Social Share Counts
+
+If you're deeply saddened by the loss of your social share counts, here are some ways to try to recover your old HTTP share counts:
+
+-   The [Social Warfare plugin](https://warfareplugins.com/) can help you recover share counts for Pinterest and LinkedIn (and will try for others, but does not guarantee it).
+    
+-   [Easy Social Share Buttons](https://codecanyon.net/item/easy-social-share-buttons-for-wordpress/6394476) includes a similar feature, though I've never tested it.
+    
+
+-   Try using [the code snippet explained here](https://wordpress.org/support/topic/social-shares-count-recover-after-moving-to-https/), though again I haven't personally tested this.
+    
+
+## Enjoy Your New HTTPS Site
+
+That was a good deal of work - but now that you've got your site running on HTTPS, you don't have to think about it ever again.
+
+You and your users will be more secure while browsing your site. And Google will like you better with a positive SEO ranking factor and a nice green padlock in Chrome.
+
+I know this was a technical process and you guys might have questions. So if you're still confused by any part of the migration process, **leave a comment and Tung and I will try to help out.**
+
+[](https://www.cloudliving.com/author/tung-tran/)
+
+### [Tung Tran](https://www.cloudliving.com/author/tung-tran/)
+
+I’ve built and sold a bunch of highly profitable internet businesses since 2010. After selling my last one in November 2020, I decided to go all... [\[Read full bio\]](https://www.cloudliving.com/author/tung-tran/)

@@ -1,0 +1,87 @@
+<aside class="space-y-8">
+  <!-- About -->
+  <div>
+    <p class="text-xs font-medium uppercase tracking-wide text-gray-400 mb-4">
+      About Tung Tran
+    </p>
+    <div class="flex items-center gap-3 mb-4">
+      <img
+        src="/images/tung.jpg"
+        alt="Tung Tran"
+        width="56"
+        height="56"
+        class="rounded-full object-cover w-14 h-14"
+      />
+      <span class="font-semibold text-gray-900">Tung Tran</span>
+    </div>
+    <p class="text-sm text-gray-500 leading-relaxed">
+      Vietnamese internet business builder and lifelong learner. I've been building things on the internet since 2010.
+    </p>
+    <a
+      href="/about"
+      class="inline-flex items-center gap-1 mt-3 text-sm font-medium text-gray-900 hover:text-brand transition-colors"
+    >
+      More about me <span>&rarr;</span>
+    </a>
+  </div>
+
+  <hr class="border-gray-100" />
+
+  <!-- Connect -->
+  <div>
+    <p class="text-sm font-medium text-gray-900 mb-3">
+      Let's connect:
+    </p>
+    <div class="flex items-center gap-2">
+      <a
+        href="https://x.com/OfficialTung"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 text-gray-500 hover:border-gray-900 hover:text-gray-900 transition-colors"
+        aria-label="X (Twitter)"
+      >
+        <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <hr class="border-gray-100" />
+
+  <!-- Subscribe -->
+  <div>
+    <p class="text-sm font-semibold text-gray-900 mb-2">
+      Subscribe to get my best content
+    </p>
+    <p class="text-xs text-gray-500 leading-relaxed mb-3">
+      I don't send many emails... but when I do, it's worth reading. Unsubscribe anytime.
+    </p>
+    <form class="space-y-2" id="sidebar-subscribe">
+      <input
+        type="text"
+        placeholder="Name"
+        class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+      />
+      <input
+        type="email"
+        placeholder="Enter email address"
+        autocomplete="email"
+        required
+        class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
+      />
+      <button
+        type="submit"
+        class="w-full rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-hover transition-colors"
+      >
+        Subscribe
+      </button>
+    </form>
+  </div>
+</aside>
+
+<script>
+  document.getElementById("sidebar-subscribe")?.addEventListener("submit", (e) => {
+    e.preventDefault();
+  });
+</script>

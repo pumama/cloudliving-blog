@@ -1,0 +1,71 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PostCard from "../components/PostCard.astro";
+import Subscribe from "../components/Subscribe.astro";
+import { getAllPosts } from "../lib/posts";
+
+const posts = getAllPosts();
+const recentPosts = posts.slice(0, 5);
+---
+
+<Layout>
+  <div class="mx-auto max-w-3xl px-6 py-16">
+    <section class="mb-16 flex items-center gap-10">
+      <div class="flex-1">
+        <h1 class="text-3xl font-bold text-gray-900">Hi, I'm Tung</h1>
+        <p class="mt-4 text-lg leading-relaxed text-gray-600">
+          Vietnamese internet business builder and lifelong learner. I write
+          about business lessons, personal growth, and building things on the
+          internet.
+        </p>
+        <div class="mt-5 flex items-center gap-3 text-sm">
+          <a
+            href="/about"
+            class="inline-flex items-center gap-1.5 rounded-full bg-brand px-4 py-1.5 text-white hover:bg-brand-hover transition-colors"
+          >
+            More about me &rarr;
+          </a>
+          <a
+            href="https://x.com/OfficialTung"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 rounded-full border border-gray-200 px-4 py-1.5 text-gray-600 hover:border-gray-900 hover:text-gray-900 transition-colors"
+          >
+            <svg viewBox="0 0 24 24" class="w-3.5 h-3.5 fill-current" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            Follow me
+          </a>
+        </div>
+      </div>
+      <img
+        src="/images/tung.jpg"
+        alt="Tung Tran"
+        width="160"
+        height="160"
+        class="hidden sm:block rounded-full object-cover w-40 h-40 shrink-0"
+      />
+    </section>
+
+    <section class="mb-12">
+      <Subscribe />
+    </section>
+
+    <section>
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-sm font-medium uppercase tracking-wide text-gray-400">
+          Recent Posts
+        </h2>
+        <a href="/blog" class="text-sm text-brand hover:text-brand-hover">
+          View all &rarr;
+        </a>
+      </div>
+      <div class="divide-y divide-gray-100">
+        {recentPosts.map((post) => <PostCard post={post} />)}
+      </div>
+      {recentPosts.length === 0 && (
+        <p class="text-gray-400 text-sm py-8">No posts yet.</p>
+      )}
+    </section>
+  </div>
+</Layout>
