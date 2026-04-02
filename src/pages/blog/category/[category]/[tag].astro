@@ -1,0 +1,40 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import BlogListing from "../../../../components/BlogListing.astro";
+import { getAllPosts, getAllCategories, getTagsForCategory, slugify } from "../../../../lib/posts";
+
+export function getStaticPaths() {
+  const categories = getAllCategories();
+  const paths: { params: { category: string; tag: string }; props: { categoryName: string; tagName: string } }[] = [];
+
+  for (const cat of categories) {
+    const tags = getTagsForCategory(cat.name);
+    for (const tag of tags) {
+      paths.push({
+        params: { category: slugify(cat.name), tag: slugify(tag.name) },
+        props: { categoryName: cat.name, tagName: tag.name },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { categoryName, tagName } = Astro.props;
+const allPosts = getAllPosts();
+const categories = getAllCategories();
+const tags = getTagsForCategory(categoryName);
+const posts = allPosts
+  .filter((p) => p.category === categoryName)
+  .filter((p) => p.tags.includes(tagName));
+---
+
+<Layout title={`${tagName} — ${categoryName} — Blog`} description={`${tagName} posts in ${categoryName} by Tung Tran.`}>
+  <BlogListing
+    posts={posts}
+    categories={categories}
+    tags={tags}
+    activeCategory={categoryName}
+    activeTag={tagName}
+  />
+</Layout>

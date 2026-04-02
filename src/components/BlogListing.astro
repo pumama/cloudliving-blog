@@ -1,0 +1,99 @@
+---
+import PostCard from "./PostCard.astro";
+import { slugify, type Post, type CategoryInfo } from "../lib/posts";
+
+interface Props {
+  posts: Post[];
+  categories: CategoryInfo[];
+  tags: CategoryInfo[];
+  activeCategory: string;
+  activeTag: string;
+}
+
+const { posts, categories, tags, activeCategory, activeTag } = Astro.props;
+
+const showByYear = !activeCategory;
+const postsByYear: Record<string, Post[]> = {};
+if (showByYear) {
+  for (const post of posts) {
+    const year = new Date(post.date).getFullYear().toString();
+    if (!postsByYear[year]) postsByYear[year] = [];
+    postsByYear[year].push(post);
+  }
+}
+const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
+
+const showTags = activeCategory && tags.length > 1;
+---
+
+<div class="mx-auto max-w-3xl px-6 py-16">
+  <h1 class="text-2xl font-bold text-gray-900 mb-6">Blog</h1>
+
+  <div class="flex flex-wrap gap-2">
+    <a
+      href="/blog"
+      class:list={[
+        "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm transition-colors",
+        !activeCategory ? "bg-brand text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200",
+      ]}
+    >
+      All
+    </a>
+    {categories.map((cat) => (
+      <a
+        href={`/blog/category/${slugify(cat.name)}`}
+        class:list={[
+          "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm transition-colors",
+          activeCategory === cat.name ? "bg-brand text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200",
+        ]}
+      >
+        {cat.name}
+        <span class:list={["text-xs", activeCategory === cat.name ? "text-white/70" : "text-gray-400"]}>
+          {cat.count}
+        </span>
+      </a>
+    ))}
+  </div>
+
+  {showTags && (
+    <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1 border-b border-gray-100 pb-4 text-sm text-gray-400">
+      <a
+        href={`/blog/category/${slugify(activeCategory)}`}
+        class:list={["transition-colors", !activeTag ? "text-brand" : "hover:text-gray-600"]}
+      >
+        All
+      </a>
+      {tags.map((t) => (
+        <a
+          href={`/blog/category/${slugify(activeCategory)}/${slugify(t.name)}`}
+          class:list={["transition-colors", activeTag === t.name ? "text-brand" : "hover:text-gray-600"]}
+        >
+          {t.name}
+        </a>
+      ))}
+    </div>
+  )}
+
+  {showByYear ? (
+    <div class="mt-10">
+      {years.map((year) => (
+        <section class="mb-12">
+          <h2 class="text-lg font-semibold text-gray-300 mb-2 pb-2 border-b border-gray-100">
+            {year}
+          </h2>
+          <div class="divide-y divide-gray-100">
+            {postsByYear[year].map((post) => <PostCard post={post} />)}
+          </div>
+        </section>
+      ))}
+    </div>
+  ) : (
+    <div class="mt-4 divide-y divide-gray-100">
+      {posts.map((post) => <PostCard post={post} />)}
+    </div>
+  )}
+
+  {posts.length === 0 && (
+    <p class="text-gray-400 text-sm py-8">No posts found.</p>
+  )}
+</div>

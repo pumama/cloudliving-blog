@@ -1,105 +1,18 @@
 ---
-export const prerender = false;
-
 import Layout from "../../layouts/Layout.astro";
-import PostCard from "../../components/PostCard.astro";
-import { getAllPosts, getAllCategories, getTagsForCategory } from "../../lib/posts";
+import BlogListing from "../../components/BlogListing.astro";
+import { getAllPosts, getAllCategories } from "../../lib/posts";
 
-const category = Astro.url.searchParams.get("category") || "";
-const tag = Astro.url.searchParams.get("tag") || "";
-const allPosts = getAllPosts();
+const posts = getAllPosts();
 const categories = getAllCategories();
-const tags = category ? getTagsForCategory(category) : [];
-
-let posts = category ? allPosts.filter((p) => p.category === category) : allPosts;
-if (category && tag) {
-  posts = posts.filter((p) => p.tags.includes(tag));
-}
-
-const showByYear = !category;
-const postsByYear: Record<string, typeof posts> = {};
-if (showByYear) {
-  for (const post of posts) {
-    const year = new Date(post.date).getFullYear().toString();
-    if (!postsByYear[year]) postsByYear[year] = [];
-    postsByYear[year].push(post);
-  }
-}
-const years = Object.keys(postsByYear).sort((a, b) => Number(b) - Number(a));
-
-const showTags = category && tags.length > 1;
 ---
 
 <Layout title="Blog" description="All posts by Tung Tran on business, life, and building things on the internet.">
-  <div class="mx-auto max-w-3xl px-6 py-16">
-    <h1 class="text-2xl font-bold text-gray-900 mb-6">Blog</h1>
-
-    <div class="flex flex-wrap gap-2">
-      <a
-        href="/blog"
-        class:list={[
-          "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm transition-colors",
-          !category ? "bg-brand text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200",
-        ]}
-      >
-        All
-      </a>
-      {categories.map((cat) => (
-        <a
-          href={`/blog?category=${encodeURIComponent(cat.name)}`}
-          class:list={[
-            "inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-sm transition-colors",
-            category === cat.name ? "bg-brand text-white" : "bg-gray-100 text-gray-600 hover:bg-gray-200",
-          ]}
-        >
-          {cat.name}
-          <span class:list={["text-xs", category === cat.name ? "text-white/70" : "text-gray-400"]}>
-            {cat.count}
-          </span>
-        </a>
-      ))}
-    </div>
-
-    {showTags && (
-      <div class="mt-6 flex flex-wrap gap-x-4 gap-y-1 border-b border-gray-100 pb-4 text-sm text-gray-400">
-        <a
-          href={`/blog?category=${encodeURIComponent(category)}`}
-          class:list={["transition-colors", !tag ? "text-brand" : "hover:text-gray-600"]}
-        >
-          All
-        </a>
-        {tags.map((t) => (
-          <a
-            href={`/blog?category=${encodeURIComponent(category)}&tag=${encodeURIComponent(t.name)}`}
-            class:list={["transition-colors", tag === t.name ? "text-brand" : "hover:text-gray-600"]}
-          >
-            {t.name}
-          </a>
-        ))}
-      </div>
-    )}
-
-    {showByYear ? (
-      <div class="mt-10">
-        {years.map((year) => (
-          <section class="mb-12">
-            <h2 class="text-lg font-semibold text-gray-300 mb-2 pb-2 border-b border-gray-100">
-              {year}
-            </h2>
-            <div class="divide-y divide-gray-100">
-              {postsByYear[year].map((post) => <PostCard post={post} />)}
-            </div>
-          </section>
-        ))}
-      </div>
-    ) : (
-      <div class="mt-4 divide-y divide-gray-100">
-        {posts.map((post) => <PostCard post={post} />)}
-      </div>
-    )}
-
-    {posts.length === 0 && (
-      <p class="text-gray-400 text-sm py-8">No posts found.</p>
-    )}
-  </div>
+  <BlogListing
+    posts={posts}
+    categories={categories}
+    tags={[]}
+    activeCategory=""
+    activeTag=""
+  />
 </Layout>

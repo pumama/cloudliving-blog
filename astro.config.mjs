@@ -24,7 +24,6 @@ function getRedirects() {
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.cloudliving.com',
-  output: 'static',
   adapter: vercel(),
   integrations: [sitemap()],
   redirects: getRedirects(),

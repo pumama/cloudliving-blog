@@ -103,3 +103,7 @@ export function getAllCategories(): CategoryInfo[] {
       return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
     });
 }
+
+export function slugify(str: string): string {
+  return str.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
