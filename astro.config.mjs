@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
-import node from '@astrojs/node';
+import vercel from '@astrojs/vercel';
 import fs from 'fs';
 import path from 'path';
 
@@ -25,7 +25,7 @@ function getRedirects() {
 export default defineConfig({
   site: 'https://www.cloudliving.com',
   output: 'static',
-  adapter: node({ mode: 'standalone' }),
+  adapter: vercel(),
   integrations: [sitemap()],
   redirects: getRedirects(),
   vite: {
