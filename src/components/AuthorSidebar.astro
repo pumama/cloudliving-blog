@@ -47,41 +47,5 @@
     </div>
   </div>
 
-  <hr class="border-gray-100" />
-
-  <!-- Subscribe -->
-  <div>
-    <p class="text-sm font-semibold text-gray-900 mb-2">
-      Subscribe to get my best content
-    </p>
-    <p class="text-xs text-gray-500 leading-relaxed mb-3">
-      I don't send many emails... but when I do, it's worth reading. Unsubscribe anytime.
-    </p>
-    <form class="space-y-2" id="sidebar-subscribe">
-      <input
-        type="text"
-        placeholder="Name"
-        class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
-      />
-      <input
-        type="email"
-        placeholder="Enter email address"
-        autocomplete="email"
-        required
-        class="w-full rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
-      />
-      <button
-        type="submit"
-        class="w-full rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white hover:bg-brand-hover transition-colors"
-      >
-        Subscribe
-      </button>
-    </form>
-  </div>
+  <!-- Subscribe hidden for now -->
 </aside>
-
-<script>
-  document.getElementById("sidebar-subscribe")?.addEventListener("submit", (e) => {
-    e.preventDefault();
-  });
-</script>
