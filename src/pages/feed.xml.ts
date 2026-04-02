@@ -11,8 +11,8 @@ export const GET: APIRoute = () => {
       (post) => `
     <item>
       <title><![CDATA[${post.title}]]></title>
-      <link>${siteUrl}/blog/${post.slug}</link>
-      <guid isPermaLink="true">${siteUrl}/blog/${post.slug}</guid>
+      <link>${siteUrl}/${post.slug}</link>
+      <guid isPermaLink="true">${siteUrl}/${post.slug}</guid>
       <pubDate>${new Date(post.date).toUTCString()}</pubDate>
       <description><![CDATA[${post.description}]]></description>
       <category>${post.category}</category>
