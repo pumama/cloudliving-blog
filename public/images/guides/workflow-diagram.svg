@@ -6,7 +6,7 @@
   <text x="72" y="82" font-family="Arial, sans-serif" font-size="22" fill="#0284C7" text-anchor="middle">1</text>
   <text x="72" y="106" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B" text-anchor="middle">Plan</text>
   <text x="72" y="122" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Define scope</text>
-  <text x="72" y="136" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">& features</text>
+  <text x="72" y="136" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">&amp; features</text>
 
   <path d="M130 100 L148 100" stroke="#0284C7" stroke-width="1.5" opacity="0.4"/>
   <path d="M145 94 L153 100 L145 106" fill="#0284C7" opacity="0.4"/>
@@ -35,7 +35,7 @@
   <rect x="434" y="50" width="105" height="100" rx="10" fill="white" stroke="#0284C7" stroke-width="1.5"/>
   <text x="486" y="82" font-family="Arial, sans-serif" font-size="22" fill="#0284C7" text-anchor="middle">4</text>
   <text x="486" y="106" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B" text-anchor="middle">Review</text>
-  <text x="486" y="122" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Test & check</text>
+  <text x="486" y="122" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Test &amp; check</text>
   <text x="486" y="136" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">every change</text>
 
   <path d="M544 100 L562 100" stroke="#0284C7" stroke-width="1.5" opacity="0.4"/>
