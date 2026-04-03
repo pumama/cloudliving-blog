@@ -6,11 +6,17 @@ heroImage: "/images/guides/ch-workflow.svg"
 
 Having the right tools is only half the equation. The other half is knowing how to use them effectively.
 
-Most people fail at vibe coding not because the AI isn't good enough, but because they prompt poorly. Here's the workflow that actually works.
+> Most people fail at vibe coding not because the AI isn't good enough, but because they prompt poorly.
+
+Here's the workflow that actually works.
 
 ## Phase 1: Plan Before You Prompt
 
+<div class="callout callout-warning">
+
 The biggest mistake beginners make: jumping straight into prompting without a plan.
+
+</div>
 
 **Before you touch any AI tool:**
 
@@ -19,17 +25,31 @@ The biggest mistake beginners make: jumping straight into prompting without a pl
 3. **Choose your tech stack.** Even if you don't code, pick a stack. The AI works better with constraints. (React + Tailwind + Supabase is a solid default.)
 4. **Sketch the UI.** Even rough wireframes on paper help. You can describe them to the AI or use them as reference in tools like Lovable.
 
+<div class="highlight">
+
+**Remember**
+
 This 15-minute planning phase saves hours of iteration later.
+
+</div>
+
+---
 
 ## Phase 2: Start Small, Build Up
 
 **Never ask the AI to build everything at once.**
 
-This prompt will fail:
-> "Build me a full project management app with user auth, real-time collaboration, Gantt charts, file uploads, and Slack integration."
+<div class="callout callout-important">
 
-This prompt will succeed:
-> "Create a new React app with Tailwind CSS. Set up the project structure with a main layout, sidebar navigation, and a placeholder dashboard page."
+**This prompt will fail:** "Build me a full project management app with user auth, real-time collaboration, Gantt charts, file uploads, and Slack integration."
+
+</div>
+
+<div class="callout callout-tip">
+
+**This prompt will succeed:** "Create a new React app with Tailwind CSS. Set up the project structure with a main layout, sidebar navigation, and a placeholder dashboard page."
+
+</div>
 
 Then:
 > "Add a task list component to the dashboard. Each task should have a title, status (todo/in-progress/done), and due date."
@@ -39,15 +59,13 @@ Then:
 
 **The pattern:** Each prompt should be 1 focused feature or change. 3-5 prompts per work session. Review after each one.
 
+---
+
 ## Phase 3: Prompt with Context
 
 Generic prompts get generic results. The more context you give the AI, the better the output.
 
-**Bad prompt:**
-> "Add authentication"
-
-**Good prompt:**
-> "Add email/password authentication using Supabase Auth. Create a login page at /login and a signup page at /signup. After login, redirect to /dashboard. Show the user's email in the sidebar header. Protect all routes except /login and /signup."
+![Good vs bad prompt comparison](/images/guides/good-vs-bad-prompt.svg)
 
 **What makes a good prompt:**
 - **Specific** — exactly what you want, where, and how
@@ -55,9 +73,15 @@ Generic prompts get generic results. The more context you give the AI, the bette
 - **Constrained** — mention the tech stack, libraries, or approaches to use
 - **Scoped** — one feature or change per prompt
 
+---
+
 ## Phase 4: Review Everything
 
+<div class="callout callout-important">
+
 **This is where most vibe coders fail.** They accept AI output without checking it.
+
+</div>
 
 After every generation:
 
@@ -67,6 +91,8 @@ After every generation:
 
 If something looks wrong, don't just prompt "fix it." Describe the specific problem:
 > "The task form submits successfully but the new task doesn't appear in the list until I refresh the page. It should appear immediately."
+
+---
 
 ## Phase 5: Iterate and Refine
 
@@ -80,11 +106,13 @@ Building with AI is an iterative process. Your first prompt rarely produces the 
 5. Review the fix
 6. Repeat until satisfied
 
-**Tips for effective iteration:**
-- Keep a running list of what works and what doesn't
-- If the AI keeps getting something wrong after 3 attempts, try a completely different approach
-- Save working checkpoints with Git before making big changes
-- When stuck, ask the AI to explain its approach before asking it to change things
+<div class="callout callout-tip">
+
+**Pro tips:** If the AI keeps getting something wrong after 3 attempts, try a completely different approach. Save working checkpoints with Git before making big changes. When stuck, ask the AI to explain its approach before asking it to change things.
+
+</div>
+
+---
 
 ## Phase 6: Ship It
 
@@ -97,13 +125,17 @@ At some point, you need to stop iterating and ship.
 - Run a build to catch any errors that only appear in production mode
 - Set up a domain and deploy (Vercel, Cloudflare Pages, or Netlify all work)
 
-**The mindset shift:** Done is better than perfect. Ship v1, get feedback, then improve. The speed advantage of vibe coding means you can iterate faster than traditional development — use that to your advantage.
+> Done is better than perfect. Ship v1, get feedback, then improve. The speed advantage of vibe coding means you can iterate faster than traditional development — use that to your advantage.
+
+---
 
 ## Putting It All Together
 
 ![The vibe coding workflow](/images/guides/workflow-diagram.svg)
 
-Here's the full workflow in one view:
+<div class="highlight">
+
+**The full workflow**
 
 1. **Plan** — Define the project, features, and tech stack (15 min)
 2. **Scaffold** — Let AI set up the project structure (1 prompt)
@@ -111,5 +143,7 @@ Here's the full workflow in one view:
 4. **Review** — Read code, test, check diffs (after every prompt)
 5. **Iterate** — Fix issues, refine, polish (as needed)
 6. **Ship** — Deploy and get feedback (then repeat from step 3)
+
+</div>
 
 This workflow works whether you're a developer using Cursor or a non-technical founder using Lovable. The principles are the same — only the tools differ.

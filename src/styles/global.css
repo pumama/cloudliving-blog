@@ -94,12 +94,94 @@ body {
 }
 
 .prose blockquote {
-  border-left: 3px solid #d1d5db;
-  padding-left: 1rem;
-  color: #6b7280;
+  border-left: 3px solid #0284C7;
+  padding: 1rem 1.25rem;
+  background: #F0F9FF;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: #1e293b;
   font-style: italic;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+.prose blockquote p {
+  margin: 0;
+}
+
+/* Callout boxes — use with HTML in markdown */
+.prose .callout {
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9375rem;
+}
+
+.prose .callout p {
+  margin: 0;
+}
+
+.prose .callout-tip {
+  background: #F0FDF4;
+  border-left: 3px solid #22C55E;
+}
+
+.prose .callout-warning {
+  background: #FFFBEB;
+  border-left: 3px solid #F59E0B;
+}
+
+.prose .callout-important {
+  background: #FEF2F2;
+  border-left: 3px solid #EF4444;
+}
+
+.prose .callout-info {
+  background: #F0F9FF;
+  border-left: 3px solid #0284C7;
+}
+
+/* Highlight box — key takeaway */
+.prose .highlight {
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose .highlight p {
+  margin: 0.5rem 0;
+}
+
+.prose .highlight strong:first-child {
+  color: #0284C7;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Big number stat */
+.prose .stat {
+  text-align: center;
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+
+.prose .stat .number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0284C7;
+  line-height: 1;
+}
+
+.prose .stat .label {
+  font-size: 0.875rem;
+  color: #64748B;
+  margin-top: 0.5rem;
 }
 
 .prose code {
