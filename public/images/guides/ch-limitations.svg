@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" fill="none">
+  <rect width="800" height="320" rx="16" fill="#F0F9FF"/>
+  <!-- Scale/spectrum -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1E293B" text-anchor="middle">Where Vibe Coding Works (and Where It Doesn't)</text>
+  <!-- Green zone -->
+  <rect x="60" y="70" width="220" height="110" rx="10" fill="white" stroke="#22C55E" stroke-width="1.5"/>
+  <rect x="60" y="70" width="220" height="4" rx="2" fill="#22C55E"/>
+  <text x="170" y="100" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#22C55E" text-anchor="middle">Works Great</text>
+  <text x="170" y="122" font-family="Arial, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Prototypes &amp; MVPs</text>
+  <text x="170" y="140" font-family="Arial, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Personal tools &amp; side projects</text>
+  <text x="170" y="158" font-family="Arial, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Content sites &amp; blogs</text>
+  <!-- Yellow zone -->
+  <rect x="300" y="70" width="200" height="110" rx="10" fill="white" stroke="#F59E0B" stroke-width="1.5"/>
+  <rect x="300" y="70" width="200" height="4" rx="2" fill="#F59E0B"/>
+  <text x="400" y="100" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#F59E0B" text-anchor="middle">Use With Caution</text>
+  <text x="400" y="122" font-family="Arial, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Production web apps</text>
+  <text x="400" y="140" font-family="Arial, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Apps with user data</text>
+  <text x="400" y="158" font-family="Arial, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Complex business logic</text>
+  <!-- Red zone -->
+  <rect x="520" y="70" width="220" height="110" rx="10" fill="white" stroke="#EF4444" stroke-width="1.5"/>
+  <rect x="520" y="70" width="220" height="4" rx="2" fill="#EF4444"/>
+  <text x="630" y="100" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#EF4444" text-anchor="middle">Avoid</text>
+  <text x="630" y="122" font-family="Arial, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Safety-critical systems</text>
+  <text x="630" y="140" font-family="Arial, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Financial / payment systems</text>
+  <text x="630" y="158" font-family="Arial, sans-serif" font-size="11" fill="#64748B" text-anchor="middle">Regulated industries</text>
+  <!-- Stats bar -->
+  <rect x="60" y="210" width="680" height="60" rx="10" fill="white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="160" y="237" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Security vulnerabilities</text>
+  <rect x="260" y="228" width="440" height="12" rx="6" fill="#F1F5F9"/>
+  <rect x="260" y="228" width="270" height="12" rx="6" fill="#EF4444" opacity="0.3"/>
+  <text x="395" y="238" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#DC2626">40-62%</text>
+  <text x="400" y="258" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">of AI-generated code contains vulnerabilities (Veracode)</text>
+  <!-- Future -->
+  <text x="400" y="300" font-family="Arial, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">The honest reality: powerful for building, but know the boundaries</text>
+</svg>

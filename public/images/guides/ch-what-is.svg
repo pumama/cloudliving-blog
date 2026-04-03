@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" fill="none">
+  <rect width="800" height="320" rx="16" fill="#F0F9FF"/>
+  <!-- Person speaking -->
+  <circle cx="200" cy="120" r="35" fill="white" stroke="#0284C7" stroke-width="1.5"/>
+  <circle cx="200" cy="110" r="12" fill="#0284C7" opacity="0.15"/>
+  <path d="M180 135 C180 125, 220 125, 220 135" fill="#0284C7" opacity="0.15"/>
+  <!-- Speech bubble -->
+  <rect x="260" y="70" width="220" height="80" rx="12" fill="white" stroke="#0284C7" stroke-width="1.5"/>
+  <path d="M260 120 L245 130 L260 125" fill="white" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="370" y="100" font-family="Arial, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">"Build me a task tracker</text>
+  <text x="370" y="118" font-family="Arial, sans-serif" font-size="12" fill="#64748B" text-anchor="middle">with drag-and-drop..."</text>
+  <!-- Arrow down -->
+  <path d="M370 160 L370 190" stroke="#0284C7" stroke-width="2" stroke-dasharray="5 3" opacity="0.4"/>
+  <path d="M364 186 L370 196 L376 186" fill="#0284C7" opacity="0.4"/>
+  <!-- AI processing -->
+  <rect x="310" y="200" width="120" height="40" rx="8" fill="#0284C7" opacity="0.1" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="370" y="225" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0284C7" text-anchor="middle">AI Agent</text>
+  <!-- Arrow down -->
+  <path d="M370 245 L370 270" stroke="#0284C7" stroke-width="2" stroke-dasharray="5 3" opacity="0.4"/>
+  <path d="M364 266 L370 276 L376 266" fill="#0284C7" opacity="0.4"/>
+  <!-- Output code -->
+  <rect x="520" y="85" width="220" height="150" rx="10" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <rect x="520" y="85" width="220" height="24" rx="10" fill="#F8FAFC"/>
+  <circle cx="536" cy="97" r="4" fill="#EF4444" opacity="0.5"/>
+  <circle cx="548" cy="97" r="4" fill="#F59E0B" opacity="0.5"/>
+  <circle cx="560" cy="97" r="4" fill="#22C55E" opacity="0.5"/>
+  <rect x="540" y="120" width="80" height="6" rx="3" fill="#0284C7" opacity="0.3"/>
+  <rect x="540" y="134" width="120" height="6" rx="3" fill="#94A3B8" opacity="0.3"/>
+  <rect x="555" y="148" width="100" height="6" rx="3" fill="#94A3B8" opacity="0.3"/>
+  <rect x="555" y="162" width="80" height="6" rx="3" fill="#0284C7" opacity="0.2"/>
+  <rect x="540" y="176" width="60" height="6" rx="3" fill="#94A3B8" opacity="0.3"/>
+  <rect x="540" y="190" width="140" height="6" rx="3" fill="#0284C7" opacity="0.2"/>
+  <rect x="540" y="204" width="90" height="6" rx="3" fill="#94A3B8" opacity="0.3"/>
+  <!-- Label -->
+  <text x="370" y="300" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">Natural language in → working code out</text>
+</svg>

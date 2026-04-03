@@ -5,6 +5,7 @@ import GuideChapterNav from "../../../components/GuideChapterNav.astro";
 import GuideTableOfContents from "../../../components/GuideTableOfContents.astro";
 import GuideProgress from "../../../components/GuideProgress.astro";
 import GuidePrevNext from "../../../components/GuidePrevNext.astro";
+import GuideHero from "../../../components/GuideHero.astro";
 import { getAllGuides, getChapter, extractHeadings } from "../../../lib/guides";
 import { markdownToHtml } from "../../../lib/markdown";
 
@@ -51,23 +52,14 @@ const headings = extractHeadings(chapter.content);
     slot="head"
   />
   <div class="mx-auto max-w-5xl px-4 sm:px-6 py-10 sm:py-16">
-    <header class="mb-8 text-center">
-      <p class="text-sm text-brand mb-2">
-        <a href="/guides" class="hover:text-brand-hover transition-colors">Guides</a>
-      </p>
-      <h1 class="text-4xl font-bold text-gray-900 leading-tight">
-        {guide.title}
-      </h1>
-      <p class="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">{guide.description}</p>
-      <p class="mt-2 text-sm text-gray-400">
-        {guide.chapters.length} chapters &middot; {guide.totalReadingTime}
-      </p>
-      <img
-        src="/images/guides/vibe-coding-hero.svg"
-        alt={guide.title}
-        class="mt-8 mx-auto max-w-2xl w-full"
-      />
-    </header>
+    <GuideHero
+      guideBreadcrumb=""
+      guideSlug={guide.slug}
+      title={guide.title}
+      description={guide.description}
+      stats={`${guide.chapters.length} chapters · ${guide.totalReadingTime}`}
+      image={chapter.heroImage || "/images/guides/vibe-coding-hero.svg"}
+    />
 
     <GuideChapterNav guide={guide} activeChapter={chapter.slug} />
     <GuideProgress current={chapter.order} total={guide.chapters.length} />

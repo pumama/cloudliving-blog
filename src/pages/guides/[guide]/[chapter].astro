@@ -5,6 +5,7 @@ import GuideChapterNav from "../../../components/GuideChapterNav.astro";
 import GuideTableOfContents from "../../../components/GuideTableOfContents.astro";
 import GuideProgress from "../../../components/GuideProgress.astro";
 import GuidePrevNext from "../../../components/GuidePrevNext.astro";
+import GuideHero from "../../../components/GuideHero.astro";
 import { getAllGuides, getChapter, extractHeadings } from "../../../lib/guides";
 import { markdownToHtml } from "../../../lib/markdown";
 
@@ -63,25 +64,20 @@ const headings = extractHeadings(chapter.content);
     slot="head"
   />
   <div class="mx-auto max-w-5xl px-4 sm:px-6 py-10 sm:py-16">
+    <GuideHero
+      guideBreadcrumb={guide.title}
+      guideSlug={guide.slug}
+      title={chapter.title}
+      description={chapter.description}
+      stats={`Chapter ${chapter.order + 1} of ${guide.chapters.length} · ${chapter.readingTime}`}
+      image={chapter.heroImage}
+    />
+
     <GuideChapterNav guide={guide} activeChapter={chapter.slug} />
     <GuideProgress current={chapter.order} total={guide.chapters.length} />
 
     <div class="lg:flex lg:gap-12">
       <article class="flex-1 min-w-0">
-        <header class="mb-10">
-          <p class="text-sm text-gray-400 mb-2">
-            <a href="/guides" class="hover:text-brand transition-colors">Guides</a>
-            {" / "}
-            <a href={`/guides/${guide.slug}`} class="hover:text-brand transition-colors">{guide.title}</a>
-          </p>
-          <h1 class="text-3xl font-bold text-gray-900 leading-tight">
-            {chapter.title}
-          </h1>
-          <p class="mt-2 text-sm text-gray-400">
-            Chapter {chapter.order + 1} of {guide.chapters.length} &middot; {chapter.readingTime}
-          </p>
-        </header>
-
         <div class="prose" set:html={html} />
 
         <GuidePrevNext prev={prev} next={next} guideSlug={guide.slug} />

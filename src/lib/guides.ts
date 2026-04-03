@@ -11,6 +11,7 @@ export type Chapter = {
   guideSlug: string;
   title: string;
   description: string;
+  heroImage: string;
   content: string;
   readingTime: string;
   order: number;
@@ -49,6 +50,7 @@ function parseChapter(
     guideSlug,
     title: data.title || chapterSlug,
     description: data.description || "",
+    heroImage: data.heroImage || "",
     content,
     readingTime: stats.text,
     order,
