@@ -9,21 +9,18 @@ const guides = getAllGuides();
 <Layout title="Guides" description="In-depth guides on building internet businesses, coding with AI, and more.">
   <div class="mx-auto max-w-3xl px-4 sm:px-6 py-10 sm:py-16">
     <h1 class="text-2xl font-bold text-gray-900 mb-4">Guides</h1>
-    <p class="text-gray-500 leading-relaxed">
-      I write in-depth guides on topics I've spent years learning. Here's how each one is made:
+    <p class="text-gray-500 leading-relaxed mb-4">
+      I write guides to break down topics I've spent years learning:
     </p>
-    <div class="bg-gray-50 rounded-xl p-5 my-6 text-sm text-gray-600 leading-relaxed space-y-2">
-      <ul class="list-disc pl-5 space-y-2">
-        <li>I pick a topic I have real experience with — not something I just read about.</li>
-        <li>I use AI to help with research and drafting. It speeds up the writing process significantly.</li>
-        <li>I personally review, edit, and rewrite every chapter. If it doesn't sound like me or match my experience, it gets cut.</li>
-        <li>I add my own stories, lessons, and opinions throughout. The frameworks come from things I've actually done.</li>
-        <li>Each guide is free. I'd rather it reach more people than sit behind a paywall.</li>
+    <div class="bg-gray-50 rounded-xl p-5 mb-8 text-gray-600 leading-relaxed space-y-3">
+      <ul class="list-disc pl-5 space-y-3">
+        <li>I pick a topic I have real, hands-on experience with.</li>
+        <li>I research deeply and question the conventional wisdom. If something doesn't match my experience, I say so.</li>
+        <li>I use AI to help with research and drafting — then I personally rewrite, edit, and add my own stories and lessons until every chapter sounds like me.</li>
+        <li>"The difference between knowledge and wisdom is experience," so I only write about things I've actually done.</li>
+        <li>I release each guide for free.</li>
       </ul>
     </div>
-    <p class="text-gray-500 text-sm mb-8">
-      Think of these as handbooks — designed to take you from zero to competent on each topic.
-    </p>
 
     <div class="space-y-4">
       {guides.map((guide) => <GuideCard guide={guide} />)}
