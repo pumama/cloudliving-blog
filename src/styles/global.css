@@ -108,6 +108,43 @@ body {
   margin: 0;
 }
 
+/* Tool card with logo */
+.prose .tool-card {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose .tool-card img {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.prose .tool-card .tool-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.prose .tool-card .tool-info p {
+  margin: 0.25rem 0;
+}
+
+.prose .tool-card .tool-info strong:first-child {
+  color: #0284C7;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
 /* Callout boxes — use with HTML in markdown */
 .prose .callout {
   padding: 1rem 1.25rem;
