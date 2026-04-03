@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
+  <rect width="800" height="200" rx="12" fill="#FEF2F2"/>
+
+  <!-- Warning icon -->
+  <circle cx="100" cy="100" r="40" fill="white" stroke="#EF4444" stroke-width="2"/>
+  <text x="100" y="92" font-family="Arial, sans-serif" font-size="36" fill="#EF4444" text-anchor="middle">!</text>
+  <text x="100" y="118" font-family="Arial, sans-serif" font-size="10" fill="#EF4444" text-anchor="middle">WARNING</text>
+
+  <!-- Main stat -->
+  <text x="290" y="75" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#DC2626" text-anchor="middle">40-62%</text>
+  <text x="290" y="105" font-family="Arial, sans-serif" font-size="14" fill="#64748B" text-anchor="middle">of AI-generated code contains</text>
+  <text x="290" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748B" text-anchor="middle">security vulnerabilities</text>
+  <text x="290" y="150" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Source: Veracode research + academic studies</text>
+
+  <!-- Common issues -->
+  <rect x="460" y="30" width="310" height="140" rx="8" fill="white" stroke="#FECACA" stroke-width="1"/>
+  <text x="480" y="56" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#DC2626">Common issues:</text>
+  <text x="480" y="80" font-family="Arial, sans-serif" font-size="11" fill="#64748B">• Missing input validation (SQL injection, XSS)</text>
+  <text x="480" y="100" font-family="Arial, sans-serif" font-size="11" fill="#64748B">• Hardcoded API keys in source code</text>
+  <text x="480" y="120" font-family="Arial, sans-serif" font-size="11" fill="#64748B">• AI suggests non-existent packages</text>
+  <text x="480" y="140" font-family="Arial, sans-serif" font-size="11" fill="#64748B">• Weak or flawed authentication logic</text>
+</svg>

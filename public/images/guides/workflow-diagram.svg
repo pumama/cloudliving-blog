@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
+  <rect width="800" height="200" rx="12" fill="#F8FAFC"/>
+
+  <!-- Step 1: Plan -->
+  <rect x="20" y="50" width="105" height="100" rx="10" fill="white" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="72" y="82" font-family="Arial, sans-serif" font-size="22" fill="#0284C7" text-anchor="middle">1</text>
+  <text x="72" y="106" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B" text-anchor="middle">Plan</text>
+  <text x="72" y="122" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Define scope</text>
+  <text x="72" y="136" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">& features</text>
+
+  <path d="M130 100 L148 100" stroke="#0284C7" stroke-width="1.5" opacity="0.4"/>
+  <path d="M145 94 L153 100 L145 106" fill="#0284C7" opacity="0.4"/>
+
+  <!-- Step 2: Scaffold -->
+  <rect x="158" y="50" width="105" height="100" rx="10" fill="white" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="210" y="82" font-family="Arial, sans-serif" font-size="22" fill="#0284C7" text-anchor="middle">2</text>
+  <text x="210" y="106" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B" text-anchor="middle">Scaffold</text>
+  <text x="210" y="122" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">AI sets up</text>
+  <text x="210" y="136" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">project</text>
+
+  <path d="M268 100 L286 100" stroke="#0284C7" stroke-width="1.5" opacity="0.4"/>
+  <path d="M283 94 L291 100 L283 106" fill="#0284C7" opacity="0.4"/>
+
+  <!-- Step 3: Build -->
+  <rect x="296" y="50" width="105" height="100" rx="10" fill="white" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="348" y="82" font-family="Arial, sans-serif" font-size="22" fill="#0284C7" text-anchor="middle">3</text>
+  <text x="348" y="106" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B" text-anchor="middle">Build</text>
+  <text x="348" y="122" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">One feature</text>
+  <text x="348" y="136" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">per prompt</text>
+
+  <path d="M406 100 L424 100" stroke="#0284C7" stroke-width="1.5" opacity="0.4"/>
+  <path d="M421 94 L429 100 L421 106" fill="#0284C7" opacity="0.4"/>
+
+  <!-- Step 4: Review -->
+  <rect x="434" y="50" width="105" height="100" rx="10" fill="white" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="486" y="82" font-family="Arial, sans-serif" font-size="22" fill="#0284C7" text-anchor="middle">4</text>
+  <text x="486" y="106" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B" text-anchor="middle">Review</text>
+  <text x="486" y="122" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Test & check</text>
+  <text x="486" y="136" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">every change</text>
+
+  <path d="M544 100 L562 100" stroke="#0284C7" stroke-width="1.5" opacity="0.4"/>
+  <path d="M559 94 L567 100 L559 106" fill="#0284C7" opacity="0.4"/>
+
+  <!-- Step 5: Iterate -->
+  <rect x="572" y="50" width="105" height="100" rx="10" fill="white" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="624" y="82" font-family="Arial, sans-serif" font-size="22" fill="#0284C7" text-anchor="middle">5</text>
+  <text x="624" y="106" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1E293B" text-anchor="middle">Iterate</text>
+  <text x="624" y="122" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">Fix, refine,</text>
+  <text x="624" y="136" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">polish</text>
+
+  <path d="M682 100 L700 100" stroke="#0284C7" stroke-width="1.5" opacity="0.4"/>
+  <path d="M697 94 L705 100 L697 106" fill="#0284C7" opacity="0.4"/>
+
+  <!-- Step 6: Ship -->
+  <rect x="710" y="50" width="70" height="100" rx="10" fill="#0284C7"/>
+  <text x="745" y="82" font-family="Arial, sans-serif" font-size="22" fill="white" text-anchor="middle">6</text>
+  <text x="745" y="106" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">Ship</text>
+  <text x="745" y="124" font-family="Arial, sans-serif" font-size="10" fill="white" opacity="0.8" text-anchor="middle">Deploy!</text>
+
+  <!-- Loop arrow from Iterate back to Build -->
+  <path d="M624 155 L624 175 L348 175 L348 155" stroke="#94A3B8" stroke-width="1" stroke-dasharray="4 3" fill="none"/>
+  <path d="M344 158 L348 150 L352 158" fill="#94A3B8"/>
+  <text x="486" y="190" font-family="Arial, sans-serif" font-size="10" fill="#94A3B8" text-anchor="middle">repeat until ready</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" fill="none">
+  <rect width="800" height="280" rx="12" fill="#F8FAFC"/>
+
+  <!-- Traditional Coding -->
+  <rect x="30" y="30" width="340" height="220" rx="10" fill="white" stroke="#E2E8F0" stroke-width="1.5"/>
+  <text x="200" y="62" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#64748B" text-anchor="middle">TRADITIONAL CODING</text>
+  <line x1="60" y1="76" x2="340" y2="76" stroke="#E2E8F0" stroke-width="1"/>
+
+  <text x="200" y="105" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">You need:</text>
+
+  <rect x="60" y="118" width="280" height="28" rx="6" fill="#FEF2F2"/>
+  <text x="200" y="137" font-family="Arial, sans-serif" font-size="12" fill="#DC2626" text-anchor="middle">Years of coding experience</text>
+
+  <rect x="60" y="154" width="280" height="28" rx="6" fill="#FEF2F2"/>
+  <text x="200" y="173" font-family="Arial, sans-serif" font-size="12" fill="#DC2626" text-anchor="middle">Deep knowledge of languages & frameworks</text>
+
+  <rect x="60" y="190" width="280" height="28" rx="6" fill="#FEF2F2"/>
+  <text x="200" y="209" font-family="Arial, sans-serif" font-size="12" fill="#DC2626" text-anchor="middle">Weeks to build an MVP</text>
+
+  <!-- Arrow -->
+  <text x="400" y="148" font-family="Arial, sans-serif" font-size="24" fill="#0284C7" text-anchor="middle">→</text>
+
+  <!-- Vibe Coding -->
+  <rect x="430" y="30" width="340" height="220" rx="10" fill="white" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="600" y="62" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0284C7" text-anchor="middle">VIBE CODING</text>
+  <line x1="460" y1="76" x2="740" y2="76" stroke="#E0F2FE" stroke-width="1"/>
+
+  <text x="600" y="105" font-family="Arial, sans-serif" font-size="13" fill="#94A3B8" text-anchor="middle">You need:</text>
+
+  <rect x="460" y="118" width="280" height="28" rx="6" fill="#F0F9FF"/>
+  <text x="600" y="137" font-family="Arial, sans-serif" font-size="12" fill="#0284C7" text-anchor="middle">Product instinct — know what to build</text>
+
+  <rect x="460" y="154" width="280" height="28" rx="6" fill="#F0F9FF"/>
+  <text x="600" y="173" font-family="Arial, sans-serif" font-size="12" fill="#0284C7" text-anchor="middle">Clear communication — describe it well</text>
+
+  <rect x="460" y="190" width="280" height="28" rx="6" fill="#F0F9FF"/>
+  <text x="600" y="209" font-family="Arial, sans-serif" font-size="12" fill="#0284C7" text-anchor="middle">Hours to build an MVP</text>
+</svg>

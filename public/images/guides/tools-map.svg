@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" fill="none">
+  <rect width="800" height="320" rx="12" fill="#F8FAFC"/>
+
+  <!-- Axes -->
+  <line x1="80" y1="280" x2="760" y2="280" stroke="#CBD5E1" stroke-width="1.5"/>
+  <line x1="80" y1="280" x2="80" y2="40" stroke="#CBD5E1" stroke-width="1.5"/>
+
+  <!-- Axis labels -->
+  <text x="420" y="310" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle">Technical Skill Required →</text>
+  <text x="30" y="160" font-family="Arial, sans-serif" font-size="12" fill="#94A3B8" text-anchor="middle" transform="rotate(-90, 30, 160)">Speed to Ship →</text>
+
+  <!-- Lovable -->
+  <circle cx="180" cy="80" r="36" fill="#0284C7" opacity="0.12" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="180" y="76" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0284C7" text-anchor="middle">Lovable</text>
+  <text x="180" y="92" font-family="Arial, sans-serif" font-size="10" fill="#64748B" text-anchor="middle">Best UI</text>
+
+  <!-- Bolt -->
+  <circle cx="280" cy="100" r="32" fill="#0284C7" opacity="0.12" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="280" y="96" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0284C7" text-anchor="middle">Bolt</text>
+  <text x="280" y="112" font-family="Arial, sans-serif" font-size="10" fill="#64748B" text-anchor="middle">Full-stack</text>
+
+  <!-- Replit -->
+  <circle cx="390" cy="140" r="34" fill="#0284C7" opacity="0.12" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="390" y="136" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0284C7" text-anchor="middle">Replit</text>
+  <text x="390" y="152" font-family="Arial, sans-serif" font-size="10" fill="#64748B" text-anchor="middle">All-in-one</text>
+
+  <!-- Cursor -->
+  <circle cx="560" cy="120" r="38" fill="#0284C7" opacity="0.12" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="560" y="116" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0284C7" text-anchor="middle">Cursor</text>
+  <text x="560" y="132" font-family="Arial, sans-serif" font-size="10" fill="#64748B" text-anchor="middle">Dev favorite</text>
+
+  <!-- Claude Code -->
+  <circle cx="680" cy="90" r="40" fill="#0284C7" opacity="0.18" stroke="#0284C7" stroke-width="2"/>
+  <text x="680" y="84" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0284C7" text-anchor="middle">Claude</text>
+  <text x="680" y="98" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#0284C7" text-anchor="middle">Code</text>
+  <text x="680" y="114" font-family="Arial, sans-serif" font-size="10" fill="#64748B" text-anchor="middle">Most powerful</text>
+
+  <!-- Legend -->
+  <text x="420" y="260" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">Bigger circle = more capable · Higher = faster to ship · Further right = more skill needed</text>
+</svg>
