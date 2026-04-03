@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" fill="none">
+  <rect width="800" height="320" rx="16" fill="#F0F9FF"/>
+
+  <!-- Handpan body - top view -->
+  <ellipse cx="400" cy="160" rx="150" ry="140" fill="white" stroke="#0284C7" stroke-width="2"/>
+
+  <!-- Ding (center) -->
+  <circle cx="400" cy="150" r="30" fill="#F0F9FF" stroke="#0284C7" stroke-width="1.5"/>
+  <text x="400" y="155" font-family="Arial, sans-serif" font-size="11" fill="#0284C7" text-anchor="middle">Ding</text>
+
+  <!-- Tone fields around the ding -->
+  <ellipse cx="340" cy="100" rx="22" ry="18" fill="#F0F9FF" stroke="#0284C7" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="460" cy="100" rx="22" ry="18" fill="#F0F9FF" stroke="#0284C7" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="300" cy="150" rx="22" ry="18" fill="#F0F9FF" stroke="#0284C7" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="500" cy="150" rx="22" ry="18" fill="#F0F9FF" stroke="#0284C7" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="320" cy="205" rx="22" ry="18" fill="#F0F9FF" stroke="#0284C7" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="480" cy="205" rx="22" ry="18" fill="#F0F9FF" stroke="#0284C7" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="365" cy="240" rx="22" ry="18" fill="#F0F9FF" stroke="#0284C7" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="435" cy="240" rx="22" ry="18" fill="#F0F9FF" stroke="#0284C7" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="400" cy="72" rx="22" ry="18" fill="#F0F9FF" stroke="#0284C7" stroke-width="1" opacity="0.8"/>
+
+  <!-- Sound waves -->
+  <path d="M565 100 C580 100, 580 80, 595 80" stroke="#0284C7" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <path d="M575 120 C590 120, 590 95, 610 95" stroke="#0284C7" stroke-width="1.5" fill="none" opacity="0.2"/>
+  <path d="M570 140 C588 140, 588 115, 608 115" stroke="#0284C7" stroke-width="1.5" fill="none" opacity="0.15"/>
+
+  <path d="M235 100 C220 100, 220 80, 205 80" stroke="#0284C7" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <path d="M225 120 C210 120, 210 95, 190 95" stroke="#0284C7" stroke-width="1.5" fill="none" opacity="0.2"/>
+  <path d="M230 140 C212 140, 212 115, 192 115" stroke="#0284C7" stroke-width="1.5" fill="none" opacity="0.15"/>
+
+  <!-- Hands -->
+  <text x="310" y="50" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">L</text>
+  <text x="490" y="50" font-family="Arial, sans-serif" font-size="11" fill="#94A3B8" text-anchor="middle">R</text>
+
+  <!-- Label -->
+  <text x="400" y="308" font-family="Arial, sans-serif" font-size="13" fill="#64748B" text-anchor="middle">9 notes, infinite possibilities</text>
+</svg>
