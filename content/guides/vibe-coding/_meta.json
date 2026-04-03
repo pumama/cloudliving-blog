@@ -1,0 +1,13 @@
+{
+  "title": "Vibe Coding: Building with AI",
+  "description": "A practical guide to building software with AI — from understanding the tools to shipping real projects. No hype, just what actually works.",
+  "date": "2026-04-03",
+  "chapters": [
+    "intro",
+    "what-is-vibe-coding",
+    "tools",
+    "workflow",
+    "best-practices",
+    "limitations"
+  ]
+}

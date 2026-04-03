@@ -1,11 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PostCard from "../components/PostCard.astro";
+import GuideCard from "../components/GuideCard.astro";
 import Subscribe from "../components/Subscribe.astro";
 import { getAllPosts } from "../lib/posts";
+import { getAllGuides } from "../lib/guides";
 
 const posts = getAllPosts();
 const recentPosts = posts.slice(0, 5);
+const guides = getAllGuides();
 ---
 
 <Layout>
@@ -73,6 +76,22 @@ const recentPosts = posts.slice(0, 5);
     <!-- <section class="mb-12">
       <Subscribe />
     </section> -->
+
+    {guides.length > 0 && (
+      <section class="mb-14">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-sm font-medium uppercase tracking-wide text-gray-400">
+            Guides
+          </h2>
+          <a href="/guides" class="text-sm text-brand hover:text-brand-hover">
+            View all &rarr;
+          </a>
+        </div>
+        <div class="space-y-4">
+          {guides.map((guide) => <GuideCard guide={guide} />)}
+        </div>
+      </section>
+    )}
 
     <section>
       <div class="flex items-center justify-between mb-4">

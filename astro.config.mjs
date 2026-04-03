@@ -23,6 +23,11 @@ export default defineConfig({
           item.changefreq = 'weekly';
           item.priority = 0.9;
         }
+        // Guide pages
+        else if (item.url.includes('/guides')) {
+          item.changefreq = 'monthly';
+          item.priority = 0.85;
+        }
         // About & Contact
         else if (item.url.includes('/about') || item.url.includes('/contact')) {
           item.changefreq = 'monthly';

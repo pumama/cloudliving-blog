@@ -1,0 +1,32 @@
+---
+import type { Guide } from "../lib/guides";
+
+interface Props {
+  guide: Guide;
+  activeChapter: string;
+}
+
+const { guide, activeChapter } = Astro.props;
+---
+
+<nav class="mb-8 overflow-x-auto">
+  <div class="flex gap-2 min-w-max pb-2">
+    {guide.chapters.map((ch, i) => {
+      const isActive = ch.slug === activeChapter;
+      const href = i === 0 ? `/guides/${guide.slug}` : `/guides/${guide.slug}/${ch.slug}`;
+      return (
+        <a
+          href={href}
+          class:list={[
+            "whitespace-nowrap rounded-full px-3.5 py-1.5 text-sm transition-colors",
+            isActive
+              ? "bg-brand text-white"
+              : "bg-gray-100 text-gray-600 hover:bg-gray-200",
+          ]}
+        >
+          {i + 1}. {ch.title}
+        </a>
+      );
+    })}
+  </div>
+</nav>

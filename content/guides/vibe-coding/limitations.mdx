@@ -1,0 +1,114 @@
+---
+title: "Limitations & Future"
+description: "An honest look at what vibe coding can't do, security risks, and where this is all heading."
+---
+
+I've spent this entire guide showing you what vibe coding can do. Now let's talk about what it can't — and what you should watch out for.
+
+This chapter might be the most important one.
+
+## Security Is a Real Problem
+
+Let me be blunt: **40-62% of AI-generated code contains security vulnerabilities.** This isn't speculation — it's backed by research from Veracode and multiple academic studies.
+
+Common vulnerabilities in AI code:
+- **Missing input validation** — opens the door to SQL injection and XSS attacks
+- **Hardcoded secrets** — API keys, passwords, and tokens left in source code
+- **Package hallucination** — AI suggests libraries that don't exist. Attackers register malicious packages with those names. You unknowingly install malware.
+- **Weak authentication** — AI-generated auth code often has subtle flaws
+
+**The takeaway:** Never deploy AI-generated code without a security review. For anything handling user data or payments, consider a professional audit.
+
+## Technical Debt Accumulates Fast
+
+Studies show AI-generated code accumulates technical debt **3x faster** than traditionally written code.
+
+Why? Because AI solves the immediate problem without considering:
+- How the code will be maintained
+- Consistency across the codebase
+- Performance at scale
+- Future feature requirements
+
+**What this looks like in practice:**
+- One file uses camelCase, another uses snake_case
+- Error handling is thorough in one function and completely missing in another
+- The same logic is duplicated in multiple places instead of being abstracted
+- No clear architecture — everything is thrown together
+
+For prototypes and MVPs, this is fine. For production software that needs to grow, it's a time bomb.
+
+## The "Black Box" Problem
+
+When AI writes your code, you get a codebase you don't fully understand.
+
+This creates problems when:
+- **Something breaks** — you can't debug what you don't understand
+- **You need to change something** — every modification risks breaking something else
+- **You hire developers** — they inherit a codebase with no clear logic or conventions
+- **Performance degrades** — you don't know where the bottleneck is
+
+**The mitigation:** Even if you can't write code, learn to read it. Understand the structure. Ask the AI to explain its decisions. The more you understand your codebase, the better you can direct it.
+
+## It Doesn't Scale Well (Yet)
+
+Vibe coding works great for:
+- Prototypes and MVPs
+- Personal tools and side projects
+- Simple web applications
+- Content sites and blogs
+
+It struggles with:
+- Large, complex applications with many interconnected features
+- Real-time systems requiring precise performance optimization
+- Projects with strict compliance or regulatory requirements
+- Codebases with 100+ files where AI loses context
+
+The context window — how much code AI can "see" at once — is the fundamental bottleneck. As this improves, so will the scale of projects you can vibe code.
+
+## When NOT to Vibe Code
+
+Be honest about when AI-assisted coding isn't the right approach:
+
+- **Safety-critical systems** — medical devices, aviation, automotive. The stakes are too high for AI-generated code.
+- **Financial systems handling real money** — the security risks are too significant without extensive auditing.
+- **Projects requiring regulatory compliance** — HIPAA, SOC 2, PCI DSS compliance requires deliberate, auditable code.
+- **Anything where a bug costs more than starting over** — if the cost of failure is catastrophic, don't gamble.
+
+## The Impact on Learning
+
+If you're learning to code, vibe coding presents a paradox:
+
+**The upside:** You can build real things immediately, which is incredibly motivating.
+
+**The downside:** You skip the fundamentals that traditionally build deep understanding. When something breaks, you don't have the mental model to fix it.
+
+**My recommendation:** Use vibe coding to build, but invest time understanding what the AI generates. Ask it to explain. Read the code. Learn the patterns. Use AI as a tutor, not just a laborer.
+
+## Where This Is Heading
+
+The trajectory is clear:
+
+**Short term (2026-2027):**
+- Tools get better at maintaining context across large projects
+- AI-generated code quality improves significantly
+- More non-developers build and ship software
+- "Vibe coding" evolves into more structured "agentic engineering"
+
+**Medium term (2027-2030):**
+- AI handles most routine programming tasks
+- The developer role shifts toward architecture, design, and oversight
+- Building software becomes as accessible as building a website is today
+- New types of applications emerge that weren't possible before
+
+**The honest outlook:**
+Vibe coding won't replace professional software engineering for complex systems. But it will — and already has — dramatically expanded who can build software and how fast they can do it.
+
+The builders who thrive will be the ones who combine AI speed with human judgment. Tools are just multipliers. Clear thinking, good taste, and the willingness to iterate — those remain irreplaceable.
+
+## Final Thought
+
+I built the blog you're reading this on using the exact workflow described in this guide. AI wrote the code. I directed the process, made the decisions, and shaped the result.
+
+That's vibe coding. Not magic. Not hype. Just a new — and very powerful — way to build things.
+
+Now go build something.

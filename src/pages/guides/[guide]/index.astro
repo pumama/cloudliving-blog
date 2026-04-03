@@ -1,0 +1,89 @@
+---
+import { Schema } from "astro-seo-schema";
+import Layout from "../../../layouts/Layout.astro";
+import GuideChapterNav from "../../../components/GuideChapterNav.astro";
+import GuideTableOfContents from "../../../components/GuideTableOfContents.astro";
+import GuideProgress from "../../../components/GuideProgress.astro";
+import GuidePrevNext from "../../../components/GuidePrevNext.astro";
+import { getAllGuides, getChapter, extractHeadings } from "../../../lib/guides";
+import { markdownToHtml } from "../../../lib/markdown";
+
+export function getStaticPaths() {
+  const guides = getAllGuides();
+  return guides.map((g) => ({
+    params: { guide: g.slug },
+    props: { guideSlug: g.slug },
+  }));
+}
+
+const { guideSlug } = Astro.props;
+const data = getChapter(guideSlug, getAllGuides().find(g => g.slug === guideSlug)!.chapterSlugs[0]);
+if (!data) return Astro.redirect("/404");
+
+const { guide, chapter, next } = data;
+const html = await markdownToHtml(chapter.content);
+const headings = extractHeadings(chapter.content);
+---
+
+<Layout title={guide.title} description={guide.description} article publishedTime={guide.date}>
+  <Schema
+    item={{
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: guide.title,
+      description: guide.description,
+      url: `https://www.cloudliving.com/guides/${guide.slug}/`,
+      author: {
+        "@type": "Person",
+        name: "Tung Tran",
+        url: "https://www.cloudliving.com/about",
+      },
+      datePublished: guide.date,
+      hasPart: guide.chapters.map((ch, i) => ({
+        "@type": "Article",
+        name: ch.title,
+        position: i + 1,
+        url: i === 0
+          ? `https://www.cloudliving.com/guides/${guide.slug}/`
+          : `https://www.cloudliving.com/guides/${guide.slug}/${ch.slug}/`,
+      })),
+    }}
+    slot="head"
+  />
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 py-10 sm:py-16">
+    <header class="mb-8 text-center">
+      <p class="text-sm text-brand mb-2">
+        <a href="/guides" class="hover:text-brand-hover transition-colors">Guides</a>
+      </p>
+      <h1 class="text-4xl font-bold text-gray-900 leading-tight">
+        {guide.title}
+      </h1>
+      <p class="mt-3 text-lg text-gray-500 max-w-2xl mx-auto">{guide.description}</p>
+      <p class="mt-2 text-sm text-gray-400">
+        {guide.chapters.length} chapters &middot; {guide.totalReadingTime}
+      </p>
+      <img
+        src="/images/guides/vibe-coding-hero.svg"
+        alt={guide.title}
+        class="mt-8 mx-auto max-w-2xl w-full"
+      />
+    </header>
+
+    <GuideChapterNav guide={guide} activeChapter={chapter.slug} />
+    <GuideProgress current={chapter.order} total={guide.chapters.length} />
+
+    <div class="lg:flex lg:gap-12">
+      <article class="flex-1 min-w-0">
+        <div class="prose" set:html={html} />
+
+        <GuidePrevNext prev={null} next={next} guideSlug={guide.slug} />
+      </article>
+
+      <div class="hidden lg:block w-56 shrink-0">
+        <div class="sticky top-8">
+          <GuideTableOfContents headings={headings} />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

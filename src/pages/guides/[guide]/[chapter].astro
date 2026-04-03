@@ -1,0 +1,97 @@
+---
+import { Schema } from "astro-seo-schema";
+import Layout from "../../../layouts/Layout.astro";
+import GuideChapterNav from "../../../components/GuideChapterNav.astro";
+import GuideTableOfContents from "../../../components/GuideTableOfContents.astro";
+import GuideProgress from "../../../components/GuideProgress.astro";
+import GuidePrevNext from "../../../components/GuidePrevNext.astro";
+import { getAllGuides, getChapter, extractHeadings } from "../../../lib/guides";
+import { markdownToHtml } from "../../../lib/markdown";
+
+export function getStaticPaths() {
+  const guides = getAllGuides();
+  const paths: { params: { guide: string; chapter: string }; props: { guideSlug: string; chapterSlug: string } }[] = [];
+
+  for (const g of guides) {
+    // Skip first chapter (rendered by [guide]/index.astro)
+    for (let i = 1; i < g.chapterSlugs.length; i++) {
+      paths.push({
+        params: { guide: g.slug, chapter: g.chapterSlugs[i] },
+        props: { guideSlug: g.slug, chapterSlug: g.chapterSlugs[i] },
+      });
+    }
+  }
+
+  return paths;
+}
+
+const { guideSlug, chapterSlug } = Astro.props;
+const data = getChapter(guideSlug, chapterSlug);
+if (!data) return Astro.redirect("/404");
+
+const { guide, chapter, prev, next } = data;
+const html = await markdownToHtml(chapter.content);
+const headings = extractHeadings(chapter.content);
+---
+
+<Layout title={`${chapter.title} — ${guide.title}`} description={chapter.description} article publishedTime={guide.date}>
+  <Schema
+    item={{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: chapter.title,
+      description: chapter.description,
+      url: `https://www.cloudliving.com/guides/${guide.slug}/${chapter.slug}/`,
+      isPartOf: {
+        "@type": "CreativeWork",
+        name: guide.title,
+        url: `https://www.cloudliving.com/guides/${guide.slug}/`,
+      },
+      position: chapter.order + 1,
+      author: {
+        "@type": "Person",
+        name: "Tung Tran",
+        url: "https://www.cloudliving.com/about",
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Cloud Living",
+        url: "https://www.cloudliving.com",
+      },
+      datePublished: guide.date,
+    }}
+    slot="head"
+  />
+  <div class="mx-auto max-w-5xl px-4 sm:px-6 py-10 sm:py-16">
+    <GuideChapterNav guide={guide} activeChapter={chapter.slug} />
+    <GuideProgress current={chapter.order} total={guide.chapters.length} />
+
+    <div class="lg:flex lg:gap-12">
+      <article class="flex-1 min-w-0">
+        <header class="mb-10">
+          <p class="text-sm text-gray-400 mb-2">
+            <a href="/guides" class="hover:text-brand transition-colors">Guides</a>
+            {" / "}
+            <a href={`/guides/${guide.slug}`} class="hover:text-brand transition-colors">{guide.title}</a>
+          </p>
+          <h1 class="text-3xl font-bold text-gray-900 leading-tight">
+            {chapter.title}
+          </h1>
+          <p class="mt-2 text-sm text-gray-400">
+            Chapter {chapter.order + 1} of {guide.chapters.length} &middot; {chapter.readingTime}
+          </p>
+        </header>
+
+        <div class="prose" set:html={html} />
+
+        <GuidePrevNext prev={prev} next={next} guideSlug={guide.slug} />
+      </article>
+
+      <div class="hidden lg:block w-56 shrink-0">
+        <div class="sticky top-8">
+          <GuideTableOfContents headings={headings} />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

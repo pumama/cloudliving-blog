@@ -1,0 +1,46 @@
+---
+import type { Chapter } from "../lib/guides";
+
+interface Props {
+  prev: Chapter | null;
+  next: Chapter | null;
+  guideSlug: string;
+}
+
+const { prev, next, guideSlug } = Astro.props;
+
+function chapterUrl(ch: Chapter) {
+  return ch.order === 0 ? `/guides/${guideSlug}` : `/guides/${guideSlug}/${ch.slug}`;
+}
+---
+
+{(prev || next) && (
+  <nav class="mt-12 flex items-stretch gap-4">
+    {prev ? (
+      <a
+        href={chapterUrl(prev)}
+        class="flex-1 group rounded-xl border border-gray-200 p-4 hover:border-brand/30 transition-colors"
+      >
+        <p class="text-xs text-gray-400 mb-1">&larr; Previous</p>
+        <p class="text-sm font-medium text-gray-900 group-hover:text-brand transition-colors">
+          {prev.title}
+        </p>
+      </a>
+    ) : (
+      <div class="flex-1" />
+    )}
+    {next ? (
+      <a
+        href={chapterUrl(next)}
+        class="flex-1 group rounded-xl border border-gray-200 p-4 hover:border-brand/30 transition-colors text-right"
+      >
+        <p class="text-xs text-gray-400 mb-1">Next &rarr;</p>
+        <p class="text-sm font-medium text-gray-900 group-hover:text-brand transition-colors">
+          {next.title}
+        </p>
+      </a>
+    ) : (
+      <div class="flex-1" />
+    )}
+  </nav>
+)}

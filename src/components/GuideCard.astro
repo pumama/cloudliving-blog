@@ -1,0 +1,26 @@
+---
+import type { Guide } from "../lib/guides";
+
+interface Props {
+  guide: Guide;
+}
+
+const { guide } = Astro.props;
+---
+
+<a
+  href={`/guides/${guide.slug}`}
+  class="group block rounded-xl bg-white border border-gray-100 p-6 border-l-4 border-l-brand shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+>
+  <h3 class="text-lg font-semibold text-gray-900 group-hover:text-brand transition-colors">
+    {guide.title}
+  </h3>
+  <p class="mt-2 text-sm text-gray-500 leading-relaxed">
+    {guide.description}
+  </p>
+  <div class="mt-3 flex items-center gap-3 text-xs text-gray-400">
+    <span>{guide.chapters.length} chapters</span>
+    <span>&middot;</span>
+    <span>{guide.totalReadingTime}</span>
+  </div>
+</a>

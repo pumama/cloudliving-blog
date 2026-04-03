@@ -1,0 +1,134 @@
+---
+title: "Best Practices"
+description: "Prompt crafting, testing strategies, security, and the habits that separate good vibe coders from struggling ones."
+---
+
+The difference between someone who ships great software with AI and someone who gives up after an afternoon usually comes down to habits, not talent.
+
+Here are the practices that actually matter.
+
+## Break Everything Into Small Steps
+
+This is the single most important practice. If you remember nothing else from this guide, remember this.
+
+**The anti-pattern:** One massive prompt asking for 5 features at once. The AI gets confused, produces brittle code, and you can't tell which part broke.
+
+**The practice:** One focused request per prompt. Build incrementally.
+
+Instead of:
+> "Build a dashboard with charts, filters, a data table, export to CSV, and real-time updates."
+
+Do this sequence:
+1. "Create a dashboard page with a header and empty content area."
+2. "Add a data table component showing 10 sample rows with name, date, and status columns."
+3. "Add a search filter above the table that filters rows by name."
+4. "Add a line chart above the table showing status counts over time."
+
+Each step is testable. Each step builds on the last. When something breaks, you know exactly which change caused it.
+
+## Master Prompt Crafting
+
+Your prompts are your product specifications. Treat them that way.
+
+**Anatomy of a great prompt:**
+
+```
+[CONTEXT] I'm building a blog with Astro and Tailwind CSS.
+[TASK] Add a contact form to the /contact page.
+[DETAILS] The form should have name, email, and message fields.
+          All fields are required. Show inline validation errors.
+          On submit, show a success message and clear the form.
+[CONSTRAINTS] Use only Tailwind for styling. No external form libraries.
+              Match the existing site's design language.
+```
+
+**Prompt tips:**
+- Reference existing files: "Following the same pattern as PostCard.astro..."
+- Specify error handling: "If the API call fails, show an error message. Don't let the form submit twice."
+- Mention what NOT to do: "Don't add any new dependencies."
+
+## Test After Every Change
+
+AI-generated code can look perfect and be completely broken.
+
+**After every prompt:**
+1. Run the app
+2. Test the happy path (does it work as expected?)
+3. Test edge cases (empty inputs, long text, rapid clicks)
+4. Check the browser console for errors
+5. Try it on mobile
+
+**A testing checklist for common issues:**
+- Forms: empty submit, very long inputs, special characters
+- Lists: empty state, one item, many items
+- Navigation: back button, direct URL access, refresh
+- Auth: logged out state, expired session
+- Mobile: tap targets, overflow, keyboard behavior
+
+## Use Version Control Religiously
+
+Git isn't optional when vibe coding. It's your safety net.
+
+**The practice:**
+- Commit after every working feature
+- Write clear commit messages: "Add task creation form" not "update"
+- Create branches for experimental features
+- Never let AI override your Git history
+
+**When things go wrong** (and they will):
+```bash
+git stash        # Save current broken state
+git checkout .   # Revert to last working state
+```
+
+This takes 5 seconds and saves hours of debugging. Without Git, a single bad AI generation can destroy a working project.
+
+## Integrate Security From Day One
+
+**40-62% of AI-generated code contains security vulnerabilities.** That's not a scare statistic — it's from multiple independent studies.
+
+**Common security issues in AI code:**
+- No input validation (SQL injection, XSS)
+- Hardcoded API keys or secrets
+- Missing authentication checks
+- Overly permissive CORS settings
+- No rate limiting
+
+**What to do:**
+- Include security requirements in your prompts: "Validate all user inputs. Sanitize HTML. Use parameterized queries."
+- Never commit `.env` files or API keys to Git
+- Use established auth libraries (don't let AI roll its own auth)
+- Before deploying, explicitly ask the AI: "Review this code for security vulnerabilities."
+
+## Document What Works
+
+Vibe coding is iterative. The prompts that work well today will work well tomorrow.
+
+**Keep a prompt library:**
+- Save prompts that produced great results
+- Note which tool + model combination you used
+- Record the context (what was already built when the prompt was used)
+
+**Example entry:**
+```
+Tool: Claude Code
+Context: Astro blog with Tailwind
+Prompt: "Add a category filter to the blog listing page.
+         Display as horizontal pills. Active category should
+         be highlighted with the brand color. Clicking a
+         category filters the post list."
+Result: Worked perfectly on first try.
+```
+
+Over time, this library becomes your most valuable asset.
+
+## Know When to Stop Prompting and Start Coding
+
+Sometimes the AI gets stuck. After 3 failed attempts at the same thing, consider:
+
+1. **Simplify the request** — maybe you're asking for too much at once
+2. **Try a different approach** — describe the problem, not the solution
+3. **Write it yourself** — for small fixes, manual editing is faster than another round of prompting
+4. **Switch tools** — what Claude Code can't do, Cursor might, and vice versa
+
+Vibe coding isn't "never write code." It's "write code only when you need to." Sometimes you need to.
